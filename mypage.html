@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
-  <body></body>
+  <body class="mypage">
+    <header></header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <!-- <img src="image/logo_test.png" alt="" /> -->
+        <a href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+          <button class="btn_login">
+            <a
+              href="#"
+              onclick="window.open('login.html','name','resizable=no width=400 height=500');return false"
+              >로그인</a
+            >
+          </button>
+        </li>
+      </ul>
+    </nav>
+    마이페이지
+  </body>
 </html>
