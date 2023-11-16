@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 body {
-  font-family: "Single Day", cursive;
+  font-family: "Poor Story", cursive;
 }
 body {
   margin: 0px;
@@ -30,7 +30,10 @@ body a {
   background: #a0a1f2;
 }
 .logo a {
-  font-size: 30px;
+  font-size: 40px;
+  margin-left: 20%;
+  letter-spacing: 7px;
+  font-weight: bold;
 }
 .btn_login {
   width: 100%;
@@ -41,6 +44,9 @@ body a {
   background-color: #a9aae2;
   cursor: pointer;
   border: none;
+}
+.btn_login > a {
+  font-family: "Poor Story";
 }
 .logo img {
   width: 60px;
