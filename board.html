@@ -6,7 +6,11 @@
     <title>Board page</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="bd.css" />
-    <script src="script.js"></script>
+    <script type="text/javascript" src="board.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0efc24a35e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="board">
     <header></header>
@@ -32,8 +36,8 @@
     <section>
       <div class="bd_action">
         <div class="bd_select">
-          <select name="category" id="category">
-            <option value="0" selected>카테고리</option>
+          <select name="category" id="bd_category" onchange="changeSelect()">
+            <option value="0" selected disabled>카테고리</option>
             <option value="all">전체</option>
             <option value="student">대학생</option>
             <option value="worker">직장인</option>
@@ -46,31 +50,22 @@
         </div>
       </div>
       <article>
+        <!-- 게시판 양식 -->
         <div class="bd_container">
-          <div class="bd_item" style="font-size: large">
-            A<img src="image/logo_test.png" alt="" />안녕하세요.
+          <div class="bd_item" onclick="moveBoard()" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId">Name</b></span
+            >
+            <!--이름-->
+            <img class="bd_bd" id="bd_img" src="" alt="" />
+            <!--이미지-->
+            <span style="margin-left: 50%"><b id="bd_title">Title</b></span>
+            <!--제목-->
           </div>
-          <div class="bd_item" style="font-size: large">
-            B<img src="image/logo_test.png" alt="" />저 배고파요.
-          </div>
-          <div class="bd_item" style="font-size: large">
-            C<img src="image/logo_test.png" alt="" />오늘 저녁은
-          </div>
-          <div class="bd_item" style="font-size: large">
-            D<img src="image/logo_test.png" alt="" />다이어트 시작!
-          </div>
-          <div class="bd_item" style="font-size: large">
-            E<img src="image/logo_test.png" alt="" />오늘 손녀가 태어났어요.
-          </div>
-          <div class="bd_item" style="font-size: large">
-            F<img src="image/logo_test.png" alt="" />너무 슬퍼요 ㅠㅠ
-          </div>
-          <div class="bd_item" style="font-size: large">
-            G<img src="image/logo_test.png" alt="" />놀이공원 가는날!
-          </div>
-          <div class="bd_item" style="font-size: large">
-            H<img src="image/logo_test.png" alt="" />로아 강화 성공!!!!
-          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
         </div>
       </article>
     </section>

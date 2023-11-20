@@ -7,7 +7,9 @@
   margin-left: 10%;
   margin-top: 1%;
 }
-
+.bd_item {
+  cursor: pointer;
+}
 .bd_item img {
   width: 250px;
   height: 250px;
@@ -20,7 +22,7 @@
   margin-left: 12%;
   margin-top: 3%;
 }
-#category {
+#bd_category {
   width: inherit;
   height: inherit;
   background: transparent;
@@ -50,6 +52,7 @@
   border: none;
   font-family: "Poor Story", cursive;
   z-index: 1;
+  cursor: pointer;
 }
 .bd_btn:before {
   height: 0%;
