@@ -1,3 +1,4 @@
+// 그리기 기능 (다이어리) *************************
 const canvas = document.getElementById("da-canvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("da-controlColor");
@@ -7,8 +8,8 @@ const clear = document.getElementById("da-drawDelete");
 
 const INITIAL_COLOR = "#000000";
 
-canvas.width = 624;
-canvas.height = 272;
+canvas.width = 621;
+canvas.height = 305;
 
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
@@ -102,3 +103,27 @@ function handleClearClick() {
 if (clear) {
   clear.addEventListener("click", handleClearClick);
 }
+
+// 테마 변경 코드 (다이어리) ****************************
+document.getElementById("da-Theme").addEventListener("change", function () {
+  const selectedTheme = this.value;
+  const daMainContainer = document.getElementById("da-mainContainer");
+
+  switch (selectedTheme) {
+    case "blackboard":
+      daMainContainer.style.backgroundImage =
+        "url('./image/da_blackBoard.png')";
+      break;
+    case "oldstory":
+      daMainContainer.style.backgroundImage = "url('./image/da_oldStory.png')";
+      break;
+    case "artic":
+      daMainContainer.style.backgroundImage = "url('./image/da_artic.png')";
+      break;
+    case "park":
+      daMainContainer.style.backgroundImage = "url('./image/da_park.png')";
+      break;
+    default:
+      daMainContainer.style.backgroundImage = "none";
+  }
+});
