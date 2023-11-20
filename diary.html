@@ -3,11 +3,343 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diary page</title>
+
+    <!-- css 링크 -->
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="diary.css" />
+
+    <title>Diary page</title>
   </head>
   <body>
-    일기장
+    <header></header>
+
+    <!-- 상단 네비게이션 부분 (공통) -->
+    <nav class="nav_bar">
+      <div class="logo">
+        <!-- <img src="image/logo_test.png" alt="" /> -->
+        <a href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+          <button class="btn_login">
+            <a
+              href="#"
+              onclick="window.open('login.html','name','resizable=no width=400 height=500');return false"
+              >로그인</a
+            >
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 메인부분 -->
+    <main id="da-main">
+      <form action="/diary.html" method="get">
+        <!-- 일기쓰기, 등록버튼 -->
+        <section id="da-mainHead">
+          <h1>일기 쓰기</h1>
+          <button>등록</button>
+        </section>
+
+        <!-- 배경 테마 들어갈 부분 -->
+        <section id="da-mainContainer">
+          <!-- 제목 -->
+          <input
+            type="text"
+            name="diaryTitle"
+            id="da-title"
+            required
+            placeholder="제목을 입력해주세요."
+          />
+
+          <!-- 게시판 선택, 테마 선택, 비공개 선택 -->
+          <div id="da-containerSelect">
+            <select name="boardType" id="da-boardType">
+              <option value="All">전체 게시판</option>
+              <option value="Student">대학생 게시판</option>
+              <option value="Officer">직장인 게시판</option>
+            </select>
+
+            <select name="diaryTheme" id="da-Theme">
+              <option value="basic">기본 테마</option>
+              <option value="park">놀이공원</option>
+              <option value="artic">북극</option>
+              <option value="blackboard">칠판</option>
+              <option value="oldstory">흥부와 놀부</option>
+            </select>
+
+            <span>
+              <input type="checkbox" name="private" id="da-Private" />
+              <label for="ad-diaryPrivate">비공개</label>
+            </span>
+          </div>
+
+          <!-- 날짜, 날씨 입력 -->
+          <div id="da-userWrite">
+            <div id="da-dateWeather">
+              <input
+                type="text"
+                name="month"
+                class="da-date"
+                id="da-dateMonth"
+                value="월"
+              />
+
+              <input
+                type="text"
+                name="day"
+                class="da-date"
+                id="da-dateDay"
+                value="일"
+              />
+
+              <input
+                type="text"
+                name="today"
+                class="da-date"
+                id="da-dateToday"
+                value="요일"
+              />
+              <!-- 날씨 선택 -->
+              <div id="da-weather">
+                <!-- 라디오 버튼 대신 이미지로 선택 가능하도록 구현. -->
+                <!-- 맑음 -->
+                <input
+                  type="radio"
+                  name="weather"
+                  value="sunny"
+                  id="da-sunny"
+                />
+                <label for="da-sunny">
+                  <svg
+                    class="da-weathersvg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"
+                    />
+                  </svg>
+                </label>
+                <!-- 흐림 -->
+                <input
+                  type="radio"
+                  name="weather"
+                  value="cludy"
+                  id="da-cloudy"
+                />
+                <label for="da-cloudy">
+                  <svg
+                    class="da-weathersvg"
+                    data-weather="cloudy"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M440-760v-160h80v160h-80Zm266 110-56-56 113-114 56 57-113 113Zm54 210v-80h160v80H760Zm3 299L650-254l56-56 114 112-57 57ZM254-650 141-763l57-57 112 114-56 56Zm-14 450h180q25 0 42.5-17.5T480-260q0-25-17-42.5T421-320h-51l-20-48q-14-33-44-52.5T240-440q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T40-320q0-83 58.5-141.5T240-520q60 0 109.5 32.5T423-400q58 0 97.5 43T560-254q-2 57-42.5 95.5T420-120H240Zm320-134q-5-20-10-39t-10-39q45-19 72.5-59t27.5-89q0-66-47-113t-113-47q-60 0-105 39t-53 99q-20-5-41-9t-41-9q14-88 82.5-144T480-720q100 0 170 70t70 170q0 77-44 138.5T560-254Zm-79-226Z"
+                    />
+                  </svg>
+                </label>
+                <!-- 비 -->
+                <input
+                  type="radio"
+                  name="weather"
+                  value="rainy"
+                  id="da-rainy"
+                />
+                <label for="da-rainy">
+                  <svg
+                    class="da-weathersvg"
+                    data-weather="rainy"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M558-84q-15 8-30.5 2.5T504-102l-60-120q-8-15-2.5-30.5T462-276q15-8 30.5-2.5T516-258l60 120q8 15 2.5 30.5T558-84Zm240 0q-15 8-30.5 2.5T744-102l-60-120q-8-15-2.5-30.5T702-276q15-8 30.5-2.5T756-258l60 120q8 15 2.5 30.5T798-84Zm-480 0q-15 8-30.5 2.5T264-102l-60-120q-8-15-2.5-30.5T222-276q15-8 30.5-2.5T276-258l60 120q8 15 2.5 30.5T318-84Zm-18-236q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Zm0-80h400q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-40q0-66-47-113t-113-47q-48 0-87.5 26T333-704l-10 24h-25q-57 2-97.5 42.5T160-540q0 58 41 99t99 41Zm180-200Z"
+                    />
+                  </svg>
+                </label>
+                <!-- 눈 -->
+                <input
+                  type="radio"
+                  name="weather"
+                  value="snowy"
+                  id="da-snowy"
+                />
+                <label for="da-snowy">
+                  <svg
+                    class="da-weathersvg"
+                    data-weather="snowy"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M240-200q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm480 0q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200ZM360-40q-17 0-28.5-11.5T320-80q0-17 11.5-28.5T360-120q17 0 28.5 11.5T400-80q0 17-11.5 28.5T360-40Zm120-160q-17 0-28.5-11.5T440-240q0-17 11.5-28.5T480-280q17 0 28.5 11.5T520-240q0 17-11.5 28.5T480-200ZM600-40q-17 0-28.5-11.5T560-80q0-17 11.5-28.5T600-120q17 0 28.5 11.5T640-80q0 17-11.5 28.5T600-40ZM300-320q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Zm0-80h400q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-40q0-66-47-113t-113-47q-48 0-87.5 26T333-704l-10 24h-25q-57 2-97.5 42.5T160-540q0 58 41 99t99 41Zm180-200Z"
+                    />
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <!-- 캔버스 -->
+            <canvas id="da-canvas" class="da-canvas"></canvas>
+
+            <!-- 그림도구 -->
+            <div id="da-drawingTool">
+              <!-- 색상 선택 -->
+              <div id="da-choiceColor">
+                <div
+                  class="da-controlColor"
+                  style="background-color: black"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: white"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: red"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: orange"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: yellow"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: green"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: blue"
+                ></div>
+                <div
+                  class="da-controlColor"
+                  style="background-color: purple"
+                ></div>
+              </div>
+
+              <!-- 사이즈 조절 -->
+              <div class="da-controlRange">
+                <input
+                  type="range"
+                  id="da-penRange"
+                  min="0.1"
+                  max="5"
+                  value="2.5"
+                  step="0.1"
+                />
+              </div>
+
+              <!-- 팬, 채우기, 지우개 중 하나 선택 -->
+              <div id="da-choicePen">
+                <!-- 펜 -->
+                <input
+                  type="radio"
+                  name="da-choicePen"
+                  id="da-pen"
+                  value="da-pen"
+                  checked
+                />
+                <label for="da-pen">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="da-pensvg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="m499-287 335-335-52-52-335 335 52 52Zm-261 87q-100-5-149-42T40-349q0-65 53.5-105.5T242-503q39-3 58.5-12.5T320-542q0-26-29.5-39T193-600l7-80q103 8 151.5 41.5T400-542q0 53-38.5 83T248-423q-64 5-96 23.5T120-349q0 35 28 50.5t94 18.5l-4 80Zm280 7L353-358l382-382q20-20 47.5-20t47.5 20l70 70q20 20 20 47.5T900-575L518-193Zm-159 33q-17 4-30-9t-9-30l33-159 165 165-159 33Z"
+                    />
+                  </svg>
+                </label>
+
+                <!-- 채우기 -->
+                <input
+                  type="radio"
+                  name="da-choicePen"
+                  id="da-fill"
+                  value="da-fill"
+                />
+                <label for="da-fill">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="da-pensvg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M346-140 100-386q-10-10-15-22t-5-25q0-13 5-25t15-22l230-229-106-106 62-65 400 400q10 10 14.5 22t4.5 25q0 13-4.5 25T686-386L440-140q-10 10-22 15t-25 5q-13 0-25-5t-22-15Zm47-506L179-432h428L393-646Zm399 526q-36 0-61-25.5T706-208q0-27 13.5-51t30.5-47l42-54 44 54q16 23 30 47t14 51q0 37-26 62.5T792-120Z"
+                    />
+                  </svg>
+                </label>
+
+                <!-- 지우개 -->
+                <input
+                  type="radio"
+                  name="da-choicePen"
+                  id="da-eraser"
+                  value="da-eraser"
+                />
+                <label for="da-eraser">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="da-pensvg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M690-240h190v80H610l80-80Zm-500 80-85-85q-23-23-23.5-57t22.5-58l440-456q23-24 56.5-24t56.5 23l199 199q23 23 23 57t-23 57L520-160H190Zm296-80 314-322-198-198-442 456 64 64h262Zm-6-240Z"
+                    />
+                  </svg>
+                </label>
+              </div>
+
+              <!-- 삭제 아이콘 -->
+              <div id="da-drawDelete">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  viewBox="0 -960 960 960"
+                  width="24"
+                >
+                  <path
+                    d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- 일기 작성 부분 -->
+            <textarea
+              name="da-write"
+              id="da-write"
+              rows="6"
+              required
+              placeholder="일기의 내용을 적어주세요."
+            ></textarea>
+          </div>
+        </section>
+      </form>
+    </main>
+    <!-- 자바스크립트 연결 -->
+    <script src="script.js"></script>
+    <script src="diary.js"></script>
   </body>
 </html>
