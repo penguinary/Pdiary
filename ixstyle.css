@@ -1,5 +1,45 @@
-.ix {
-    background-image: url('image/exdiary1.jpeg');
-    background-repeat: no-repeat;
+.ix-slider {
+    position: relative;
+    overflow: hidden;
+    width: 1550px;
+    height: 630px;
+}
+.ix-slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
+    background-position: center;
+    animation: ix-slider 9s infinite linear;
+}
+.ix-slide:nth-child(1) {
+    background-image: url('image/diary1.png');
+    animation-delay: 0;
+}
+.ix-slide:nth-child(2) {
+    background-image: url('image/diary2.png');
+    animation-delay: -3s;
+}
+.ix-slide:nth-child(3) {
+    background-image: url('image/diary3.png');
+    animation-delay: -6s;
+}
+@keyframes ix-slider {
+    0% {
+        transform: translateX(0);
+    }
+    26% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100%);
+        animation-timing-function: step-end;
+    }
+    93% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
