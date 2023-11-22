@@ -108,22 +108,33 @@ if (clear) {
 document.getElementById("da-Theme").addEventListener("change", function () {
   const selectedTheme = this.value;
   const daMainContainer = document.getElementById("da-mainContainer");
+  const daUserWrite = document.getElementById("da-userWrite");
 
   switch (selectedTheme) {
     case "blackboard":
       daMainContainer.style.backgroundImage =
         "url('./image/da_blackBoard.png')";
+      daUserWrite.style.backgroundColor = "transparent";
+      daUserWrite.style.border = "none";
       break;
     case "oldstory":
       daMainContainer.style.backgroundImage = "url('./image/da_oldStory.png')";
+      daUserWrite.style.backgroundColor = "transparent";
+      daUserWrite.style.border = "none";
       break;
     case "artic":
       daMainContainer.style.backgroundImage = "url('./image/da_artic.png')";
+      daUserWrite.style.backgroundColor = "transparent";
+      daUserWrite.style.border = "none";
       break;
     case "park":
       daMainContainer.style.backgroundImage = "url('./image/da_park.png')";
+      daUserWrite.style.backgroundColor = "transparent";
+      daUserWrite.style.border = "none";
       break;
     default:
       daMainContainer.style.backgroundImage = "none";
+      daUserWrite.style.backgroundColor = "white";
+      daUserWrite.style.border = "1px solid black";
   }
 });

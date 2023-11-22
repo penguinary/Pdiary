@@ -91,6 +91,13 @@
   border-radius: 4px;
 }
 
+#da-containerSelect span {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid var(--color-grey-700);
+  padding-right: 0.2rem;
+}
+
 #da-Private {
   width: 1rem;
   height: 1rem;
@@ -102,9 +109,11 @@
   margin-top: 1rem;
   border-radius: 4px;
   padding: 0 1rem 1rem 1rem;
+  background-color: white;
+  border: 1px solid black;
 }
 /* 날짜, 날씨 입력 */
-#da-dateWeather {
+#da-today {
   display: flex;
   align-items: center;
 }
