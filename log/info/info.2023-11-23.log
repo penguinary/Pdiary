@@ -434,3 +434,33 @@ Require stack:
     at Module.load (node:internal/modules/cjs/loader:1117:32)
     at Module._load (node:internal/modules/cjs/loader:958:12)
     at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 23:11:35 || [ error ] ▶ Server error
+ 	NotFoundError: Not Found
+ 2023-11-23 23:22:21 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 3
+ 	Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+ 2023-11-23 23:23:27 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 3
+ 	Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+ 2023-11-23 23:27:24 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 3
+ 	Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+ 2023-11-23 23:28:16 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 3
+ 	Error: Access denied for user 'ir-lab'@'210.119.108.230' (using password: YES)
+ 2023-11-23 23:29:16 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 3
+ 	Error: Access denied for user 'ir-lab'@'210.119.108.230' (using password: YES)
+ 2023-11-23 23:30:44 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 
+ 	Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+ 2023-11-23 23:30:49 || [ error ] ▶ DB error [user]
+ 	select user_nickname from user
+        where user_id = 
+ 	Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2

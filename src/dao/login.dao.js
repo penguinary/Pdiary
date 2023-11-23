@@ -3,10 +3,11 @@ const logger = require('../config/logger')
 
 //get_main_dao
 async function getMain(req) {
-    console.log("dao 들어옴");
+    console.log(req.user_id);
     return new Promise((reslove, reject) => {
         var queryData = `select user_nickname from user
-        where ${user_id} = ${getMain_req.user_id}`;
+        where user_id = ${req.user_id}`;
+        console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
                 logger.error(
