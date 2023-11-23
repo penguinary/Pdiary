@@ -16,13 +16,9 @@
     "http-errors": "^2.0.0",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
-<<<<<<< HEAD
-    "mysql2": "^3.6.5",
-=======
     "mysql2": "^3.6.3",
     "path": "^0.12.7",
     "pug": "^3.0.2",
->>>>>>> origin/feature/index
     "winston": "^3.11.0",
     "winston-daily-rotate-file": "^4.7.1"
   },
