@@ -1,0 +1,436 @@
+ 2023-11-23 22:13:38 || [ error ] ▶ uncaughtException: Cannot create property 'next' on string '/'
+TypeError: Cannot create property 'next' on string '/'
+    at Function.handle (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\node_modules\express\lib\router\index.js:161:12)
+    at router (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\node_modules\express\lib\router\index.js:47:12)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\login.routes.js:8:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+ 2023-11-23 22:15:09 || [ error ] ▶ Server error
+ 	NotFoundError: Not Found
+ 2023-11-23 22:15:09 || [ error ] ▶ Server error
+ 	NotFoundError: Not Found
+ 2023-11-23 22:33:25 || [ error ] ▶ uncaughtException: Cannot find module './routes/diary.routes'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/diary.routes'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:33:46 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:33:49 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:33:57 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:00 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:12 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:21 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:28 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:32 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:35 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:37 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:42 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:46 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:34:51 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:36:33 || [ error ] ▶ uncaughtException: dd is not defined
+ReferenceError: dd is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:1:1)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:36:52 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:36:56 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:38:03 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:38:09 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:38:50 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:38:56 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:39:07 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+ 2023-11-23 22:39:53 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:39:55 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:40:06 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:40:10 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:40:14 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\diary.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:10:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:40:32 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\board.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:11:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:40:34 || [ error ] ▶ uncaughtException: loginController is not defined
+ReferenceError: loginController is not defined
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\routes\board.routes.js:4:17)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:11:19)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+ 2023-11-23 22:40:36 || [ error ] ▶ uncaughtException: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+Error: Cannot find module './routes/mypageRouter'
+Require stack:
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js
+- C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\bin\www
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (C:\Users\NT930\OneDrive\바탕 화면\WEB\penguin\src\app.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
