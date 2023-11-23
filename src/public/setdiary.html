@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" id="sd-html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setdiary page</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="setdiary.css" />
+  </head>
+  <body class="main">
+    <header></header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <a href="index.html"><img src="image/penguin.png" alt="Pdiary" /></a>
+        <a id="logo_name" href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+            <button onclick="moveToLogin()" class="btn_login">
+                <a> 로그인</a>
+        </li>
+      </ul>
+    </nav>
+    <script src="script.js"></script>
+
+    <!-- 메인 부분 -->
+    <main id="sd-main">
+      <!-- 게시판 링크 (뒤로가기) -->
+      <a href="board.html">전체 게시판 ></a>
+      <!-- 컨테이너 부분 (테마 배경 부분) -->
+      <section id="sd-mainContainer">
+        <section id="sd-containerTitle">
+          <h2 id="sd-title">제목 : 웹 프로그래밍 발표</h2>
+          <p id="sd-username">황제펭귄</p>
+        </section>
+        <!-- 일기 내용 부분 -->
+        <section id="sd-userwrite">
+          <div id="sd-today">
+            <!-- 요일 -->
+            <div id="sd-date">
+              <div id="sd-month">11월</div>
+              <div id="sd-day">21일</div>
+              <div id="sd-dateToday">수요일</div>
+            </div>
+            <!-- 날씨 -->
+            <div id="sd-weather"></div>
+          </div>
+          <!-- 그림부분 -->
+          <div id="sd-image"></div>
+          <!-- 일기부분 -->
+          <textarea name="" id="sd-write"></textarea>
+        </section>
+      </section>
+      <!-- 수정 삭제 -->
+      <div id="sd-button">
+        <button>수정</button>
+        <button>삭제</button>
+      </div>
+    </main>
+  </body>
+</html>
