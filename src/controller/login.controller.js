@@ -13,9 +13,6 @@ async function signUp(req, res) {
     const signUp_req = req.body;
     console.log("데이터 들어오는거 확인", signUp_req);
     const signUp_data = await loginService.signUp(signUp_req);
-    var msg = "가입 완료";
-    var data = {code : signUp_data,
-                msg : msg};
     return res.redirect("/");
 }
 

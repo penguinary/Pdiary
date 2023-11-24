@@ -22,6 +22,27 @@ async function getMyDiary(req) {
     })
 }
 
+async function updateData(req) {
+    console.log("dao 들어옴", req)
+    return new Promise((resolve, reject) => {
+        var queryData = `update user set user_webpw = '${req.user_webpw}',
+        user_nickname='${req.user_nickname}', user_email='${req.user_email}',
+        user_birthday='${req.user_birthday}' where user_id = ${req.user_id}`;
+        db.query(queryData, (error, db_data) => {
+            if(error) {
+                logger.error(
+                    'DB error [diary]' +
+                    '\n \t' + queryData +
+                    '\n \t' + error
+                )
+                reject("DB ERR")
+            }
+            resolve(db_data)
+        })
+    })
+}
+
 module.exports = {
-    getMyDiary
+    getMyDiary,
+    updateData
 }

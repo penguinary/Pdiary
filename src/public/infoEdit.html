@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyPage</title>
     <link rel="stylesheet" href="style.css" />
-
+    <script type="text/javascript">
+      function updateData(){
+       var param={};
+       param.user_webpw=$("mp-pw").val()
+       param.user_nickname=$("mp-userNn").val()
+       param.user_email=$("mp-email").val()
+       param.user_birthday=$("mp-userBd").val()
+       var ajax=$.ajax({
+        url: "/mypage",
+        data: param,
+        type: "POST",
+        dataType: "JSON"
+       });
+      }
+    </script>
   </head>
   <body class="main">
     <header></header>
@@ -26,7 +40,7 @@
     <br />
     <section style="padding-top: 10%">
       <h2 style="text-align: center; font-size: 35px">회원정보 수정</h2>
-      <form>
+      <form action="/mypage" method="post">
         <table class="mp-info-edit-tb">
           <tr>
             <td class="mp-info-edit-td">비밀번호</td>
@@ -36,11 +50,10 @@
                 type="password"
                 class="mp-infoEdText"
                 id="mp-pw"
-                name="mp-pw"
+                name="user_webpw"
               />
             </td>
             <td class="mp-edit">
-              <input type="submit" class="mp-info-edit-button" value="수정" />
             </td>
           </tr>
           <tr>
@@ -51,21 +64,19 @@
                 type="text"
                 class="mp-infoEdText"
                 id="mp-userNn"
-                name="mp-userNn"
+                name="user_nickname"
               />
             </td>
             <td class="mp-edit">
-              <input type="submit" class="mp-info-edit-button" value="수정" />
             </td>
           </tr>
           <tr>
             <td class="mp-info-edit-td">이메일</td>
             <td>
-              &nbsp; <input type="email"class="mp-infoEdText" id="mp-email"
-              name="mp-email"
+              &nbsp; <input type="email" class="mp-infoEdText" id="mp-email"
+              name="user_email"/>
             </td>
             <td class="mp-edit">
-              <input type="submit" class="mp-info-edit-button" value="수정" />
             </td>
           </tr>
           <tr>
@@ -76,11 +87,11 @@
                 type="date"
                 class="mp-infoEdText"
                 id="mp-userBd"
-                name="mp-userBd"
+                name="user_birthday"
               />
             </td>
             <td class="mp-edit">
-              <input type="submit" class="mp-info-edit-button" value="수정" />
+              <input type="submit" onclick="updateData()" class="mp-info-edit-button" value="수정" />
             </td>
           </tr>
         </table>
