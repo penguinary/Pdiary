@@ -37,8 +37,7 @@ async function signUp(signUp_req) {
         const signUp_data = await loginDao.signUp(signUp_req);
         return {
             "Message" : "성공",
-            "Status" : 200,
-            "Data" : signUp_data
+            "Status" : 200
         }
     } catch(err) {
         return {

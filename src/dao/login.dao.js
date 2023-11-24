@@ -3,7 +3,6 @@ const logger = require('../config/logger')
 
 //get_main_dao
 async function getMain(req) {
-    console.log(req.user_id);
     return new Promise((resolve, reject) => {
         var queryData = `select user_nickname from user
         where user_id = ${req.user_id}`;
@@ -23,7 +22,6 @@ async function getMain(req) {
 }
 
 async function signUp(req) {
-    console.log(req.user_id);
     return new Promise((resolve, reject) => {
         var queryData = `insert into user(user_webid, user_webpw, user_nickname, user_email, user_birthday) 
         values('${req.user_webid}', '${req.user_webpw}', '${req.user_nickname}', '${req.user_email}', '${req.user_birthday}')`;

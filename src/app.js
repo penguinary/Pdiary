@@ -10,11 +10,12 @@ var loginRouter = require('./routes/login.routes');
 var diaryRouter = require('./routes/diary.routes');
 var boardRouter = require('./routes/board.routes');
 var mypageRouter = require('./routes/mypage.routes');
+// const exp = require("constants");
 
 //view engine setup
 app.set('view engine', 'pug');
 app.set('views',path.join(__dirname,'views'));
-app.use('/', express.static(path.join(__dirname,'public')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 if (process.env.ENODE_ENV == "production") {
     app.use(logger("combined"));
@@ -26,11 +27,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //router
+app.get("/", (req,res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+app.get("/login", (req,res) => {
+  res.sendFile(__dirname + "/public/login.html");
+});
+app.get("/board", (req,res) => {
+  res.sendFile(__dirname + "/public/board.html");
+});
+app.get("/mypage", (req,res) => {
+  res.sendFile(__dirname + "/public/mypage.html");
+});
+app.get("/diary", (req,res) => {
+  res.sendFile(__dirname + "/public/diary.html");
+});
+
 app.use("/login", loginRouter);
 app.use("/diary", diaryRouter);
 app.use("/board", boardRouter);
 app.use("/mypage", mypageRouter);
-// app.use("/board", boardRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -51,8 +67,8 @@ app.use(function (err, req, res, next) {
     res.send({ Message: "예외적이거나 예측하지 못한 에러 발생", Status: 500 });
   });
 
-app.listen(3500,()=>{  //포트설정
-    console.log('3500번 포트에서 서버 대기중입니다!');
+app.listen(5500,()=>{  //포트설정
+    console.log('5500번 포트에서 서버 대기중입니다!');
 });
 
 module.exports = app;

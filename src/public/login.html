@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mypage.css" />
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function signup(){
+        var param={};
+        param.user_webid=$("#=lg-signup-user").val()
+        param.user_webpw=$("#lg-signup-pass").val()
+        param.user_nickname=$("lg-signup-nickname").val()
+        param.user_email=$("lg-signup-email").val()
+        param.user_birthday=$("lg-signup-birth").val()
+        var ajax=$.ajax({
+          url: "/login",
+          data: param,
+          type: "POST",
+          dataType: "JSON",
+        });
+      }
+    </script>
   </head>
   <body
     style="margin: 0; color: #6a6f8c; background: #c8c8c8; font: 600 16px/18px"
@@ -45,50 +61,53 @@
             </div>
             <div class="lg-hr"></div>
           </div>
-          <div class="lg-sign-up-htm">
-            <div class="lg-group">
-              <label for="lg-signup-user" class="lg-label">User ID</label>
-              <div class="lg-in-line">
-                <input id="lg-signup-user" type="text" class="lg-input" />
-                <input type="submit" class="lg-c-button" value="중복확인" />
+          <form action="/login" method="post">
+            <div class="lg-sign-up-htm">
+              <div class="lg-group">
+                <label for="lg-signup-user" class="lg-label">User ID</label>
+                <div class="lg-in-line">
+                  <input id="lg-signup-user" name="user_webid"  type="text" class="lg-input" />
+                  <input type="submit" class="lg-c-button" value="중복확인" />
+                </div>
               </div>
-            </div>
-            <div class="lg-group">
-              <label for="lg-signup-pass" class="lg-label">PassWord</label>
-              <input
-                id="lg-signup-pass"
-                type="password"
-                class="lg-input"
-                data-type="password"
-              />
-            </div>
-            <div class="lg-group">
-              <div class="lg-in-line">
-                <label for="lg-signup-nickname" class="lg-label"
-                  >NickName</label
+              <div class="lg-group">
+                <label for="lg-signup-pass" class="lg-label">PassWord</label>
+                <input
+                  id="lg-signup-pass"
+                  type="password"
+                  class="lg-input"
+                  data-type="password"
+                  name="user_webpw"
+                />
+              </div>
+              <div class="lg-group">
+                <div class="lg-in-line">
+                  <label for="lg-signup-nickname" class="lg-label"
+                    >NickName</label
+                  >
+                  <input id="lg-signup-nickname" name="user_nickname" type="text" class="lg-input" />
+                  <input type="submit" class="lg-c-button" value="중복확인" />
+                </div>
+              </div>
+              <div class="lg-group">
+                <label for="lg-signup-email" class="lg-label"
+                  >Email Address</label
                 >
-                <input id="lg-signup-nickname" type="text" class="lg-input" />
-                <input type="submit" class="lg-c-button" value="중복확인" />
+                <input id="lg-signup-email" name="user_email" type="email" class="lg-input" />
+              </div>
+              <div class="lg-group">
+                <label for="lg-signup-birth" class="lg-label">Birth</label>
+                <input id="lg-signup-birth" name="user_birthday" type="date" class="lg-input" />
+              </div>
+              <div>
+                <input type="submit" onclick="signup()" class="lg-button" value="Sign Up">
+              </div>
+              <div class="lg-hr"></div>
+              <div class="lg-foot-lnk">
+                <label for="lg-tab-1"><a>Already Member?</a></label>
               </div>
             </div>
-            <div class="lg-group">
-              <label for="lg-signup-email" class="lg-label"
-                >Email Address</label
-              >
-              <input id="lg-signup-email" type="email" class="lg-input" />
-            </div>
-            <div class="lg-group">
-              <label for="lg-signup-birth" class="lg-label">Birth</label>
-              <input id="lg-signup-birth" type="date" class="lg-input" />
-            </div>
-            <div>
-              <input type="submit" class="lg-button" value="Sign Up" />
-            </div>
-            <div class="lg-hr"></div>
-            <div class="lg-foot-lnk">
-              <label for="lg-tab-1"><a>Already Member?</a></label>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
