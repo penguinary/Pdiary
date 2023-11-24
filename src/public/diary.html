@@ -51,21 +51,21 @@
           <!-- 게시판 선택, 테마 선택, 비공개 선택 -->
           <div id="da-containerSelect">
             <select name="boardType" id="da-boardType">
-              <option value="All">전체 게시판</option>
-              <option value="Student">대학생 게시판</option>
-              <option value="Officer">직장인 게시판</option>
+              <option value="0">전체 게시판</option>
+              <option value="1">대학생 게시판</option>
+              <option value="2">직장인 게시판</option>
             </select>
 
             <select name="diaryTheme" id="da-Theme">
-              <option value="basic">기본 테마</option>
-              <option value="park">놀이공원</option>
-              <option value="artic">북극</option>
-              <option value="blackboard">칠판</option>
-              <option value="oldstory">흥부와 놀부</option>
+              <option value="0">기본 테마</option>
+              <option value="1">놀이공원</option>
+              <option value="2">북극</option>
+              <option value="3">칠판</option>
+              <option value="4">흥부와 놀부</option>
             </select>
 
             <span>
-              <input type="checkbox" name="private" id="da-Private" />
+              <input type="checkbox" name="private" id="da-Private" value="1" />
               <label for="ad-diaryPrivate">비공개</label>
             </span>
           </div>
@@ -103,7 +103,7 @@
                 <input
                   type="radio"
                   name="weather"
-                  value="sunny"
+                  value="0"
                   id="da-sunny"
                 />
                 <label for="da-sunny">
@@ -123,7 +123,7 @@
                 <input
                   type="radio"
                   name="weather"
-                  value="cludy"
+                  value="1"
                   id="da-cloudy"
                 />
                 <label for="da-cloudy">
@@ -144,7 +144,7 @@
                 <input
                   type="radio"
                   name="weather"
-                  value="rainy"
+                  value="2"
                   id="da-rainy"
                 />
                 <label for="da-rainy">
@@ -165,7 +165,7 @@
                 <input
                   type="radio"
                   name="weather"
-                  value="snowy"
+                  value="3"
                   id="da-snowy"
                 />
                 <label for="da-snowy">

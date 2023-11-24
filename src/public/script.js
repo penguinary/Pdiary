@@ -134,23 +134,23 @@ document.getElementById("da-Theme").addEventListener("change", function () {
   const daUserWrite = document.getElementById("da-userWrite");
 
   switch (selectedTheme) {
-    case "blackboard":
+    case "3":
       daMainContainer.style.backgroundImage =
         "url('./image/da_blackBoard.png')";
       daUserWrite.style.backgroundColor = "transparent";
       daUserWrite.style.border = "none";
       break;
-    case "oldstory":
+    case "4":
       daMainContainer.style.backgroundImage = "url('./image/da_oldStory.png')";
       daUserWrite.style.backgroundColor = "transparent";
       daUserWrite.style.border = "none";
       break;
-    case "artic":
+    case "2":
       daMainContainer.style.backgroundImage = "url('./image/da_artic.png')";
       daUserWrite.style.backgroundColor = "transparent";
       daUserWrite.style.border = "none";
       break;
-    case "park":
+    case "1":
       daMainContainer.style.backgroundImage = "url('./image/da_park.png')";
       daUserWrite.style.backgroundColor = "transparent";
       daUserWrite.style.border = "none";
