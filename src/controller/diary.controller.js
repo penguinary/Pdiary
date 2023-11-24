@@ -8,6 +8,7 @@ async function postDiary(req, res, next) {
     const postDiary_data = await diaryService.postDiary(postDiary_req);
     return res.status(postDiary_data.Status).json(postDiary_data);
 }
+
 async function getDiary(req, res, next) {
     console.log("컨트롤러 들어옴");
     const getDiary_req = req.body;

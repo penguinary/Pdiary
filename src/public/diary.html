@@ -30,11 +30,11 @@
 
     <!-- 메인부분 -->
     <main id="da-main">
-      <form action="/diary.html" method="get">
+      <form action="/diary" method="POST">
         <!-- 일기쓰기, 등록버튼 -->
         <section id="da-mainHead">
           <h1>일기 쓰기</h1>
-          <button>등록</button>
+          <button type="button" onclick="postdiary()">등록</button>
         </section>
 
         <!-- 배경 테마 들어갈 부분 -->
@@ -334,6 +334,31 @@
     </main>
     <!-- 자바스크립트 연결 -->
     <script src="script.js"></script>
-    <script src="diary.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function postdiary() {
+        var param={};
+        param.user_id = 1;
+        param.diary_title=$("#da-title").val();
+        param.diary_category=$("#da-boardType").val();
+        param.diary_theme=$("#da-Theme").val();
+        param.diary_private = $("#da-Private").is(":checked") ? 1 : 0;
+        param.diary_date=$("#da-dateMonth").val() + $("#da-dateDay").val() + $("#da-dateToday").val();
+        param.diary_weather=$("input[name='weather']:checked").val();
+        param.diary_content=$("#da-write").val();
+
+        var ajax=$.ajax({
+          url: "/diary",
+          data: param,
+          type: "POST",
+          dataType: "JSON",
+        });
+
+        ajax.done(function (data, textStatus, jqXHR) {
+          alert("등록 완료!");
+          location.href = "/board.html";
+        });
+      }
+    </script>
   </body>
 </html>

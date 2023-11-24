@@ -45,7 +45,7 @@ async function putDiary(req) {
         })
     })
 }
-async function getDiary(getDiary_req) {
+async function getDiary(req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
         var queryData = `SELECT diary_theme, diary_category, diary_title, user.user_nickname, diary_date, diary_weather, diary_img, diary_content
