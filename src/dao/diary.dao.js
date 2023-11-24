@@ -48,10 +48,9 @@ async function putDiary(req) {
 async function getDiary(getDiary_req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
-        var queryData = `SELECT diary_theme, diary_category, diary_title, user.user_nickname, diary_date, diary_weather, diary_img, diary_content
-            FROM user 
-            JOIN diary ON user.user_id = diary.user_id 
-            WHERE diary.diary_id = ${diary_id}`;
+        var queryData = `SELECT d.diary_theme, d.diary_category, d.diary_title, u.user_nickname, 
+            d.diary_date, d.diary_weather, d.diary_content
+            FROM user u, diary d WHERE diary.diary_id = ${diary_id}`;
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
