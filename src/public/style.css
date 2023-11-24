@@ -465,10 +465,15 @@ body a {
 
 /* 날씨 (이미지) */
 #sd-weather {
-  width: 18rem;
-  height: 5rem;
-  background-image: url(./image/sd-weatherSunny.png);
-  background-size: cover;
+  text-align: right;
+  padding: 1.25rem 2rem 1.25rem 0;
+  /* background-image: url(./image/sd-weatherSunny.png);
+  background-size: cover; */
+}
+
+.sd-weathersvg {
+  width: 3.5rem;
+  height: 2.5rem;
 }
 
 /* 그림 (이미지) */
@@ -477,6 +482,7 @@ body a {
   height: 19rem;
   border-top: 1px solid var(--color-grey-700);
 }
+
 /* 일기부분 */
 #sd-write {
   width: 100%;
