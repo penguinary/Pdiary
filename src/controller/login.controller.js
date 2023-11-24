@@ -1,12 +1,12 @@
 const loginService = require("../service/login.service");
 
 //get_main_controller
-async function getMain(req, res, next) {
-    console.log("컨트롤러 들어옴");
-    const getMain_req = req.query;
-    console.log("데이터 들어오는거 확인", getMain_req);
-    const getMain_data = await loginService.getMain(getMain_req);
-    return res.status(getMain_data.Status).json(getMain_data);
+async function signIn(req, res, next) {
+    console.log("로그인 컨트롤러 들어옴");
+    const signIn_req = req.query;
+    console.log("로그인 데이터 들어오는거 확인", signIn_req);
+    const signIn_data = await loginService.signIn(signIn_req);
+    return res.status(signIn_data.Status).json(signIn_data);
 }
 async function signUp(req, res, next) {
     console.log("컨트롤러 들어옴");
@@ -18,6 +18,6 @@ async function signUp(req, res, next) {
 
 
 module.exports = {
-    getMain,
+    signIn,
     signUp
 }

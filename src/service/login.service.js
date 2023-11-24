@@ -1,20 +1,20 @@
 const loginDao = require('../dao/login.dao');
 
 //get_main_service
-async function getMain(getMain_req) {
+async function signIn(signIn_req) {
     console.log("서비스 들어옴");
     try {
-        if(!getMain_req) {
+        if(!signIn_req) {
             return {
                 "Message" : "요청 값이 없습니다.",
                 "Status" : 406
             }
         }
-        const getMain_data = await loginDao.getMain(getMain_req);
+        const signIn_data = await loginDao.signIn(signIn_req);
         return {
             "Message" : "성공",
             "Status" : 200,
-            "Data" : getMain_data
+            "Data" : signIn_data
         }
     } catch(err) {
         return {
@@ -50,6 +50,6 @@ async function signUp(signUp_req) {
 }
 
 module.exports = {
-    getMain,
+    signIn,
     signUp
 }
