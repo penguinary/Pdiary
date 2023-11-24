@@ -24,3 +24,7 @@ async function postDiary(postDiary_req) {
         }
     }
 }
+
+module.exports = {
+    postDiary
+}
