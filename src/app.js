@@ -27,7 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //router
-<<<<<<< HEAD
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
@@ -41,21 +40,7 @@ app.get("/mypage", (req, res) => {
   res.sendFile(__dirname + "/public/mypage.html");
 });
 app.get("/diary", (req, res) => {
-=======
-app.get("/", (req,res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
-app.get("/login", (req,res) => {
-  res.sendFile(__dirname + "/public/login.html");
-});
-app.get("/board", (req,res) => {
-  res.sendFile(__dirname + "/public/board.html");
-});
-app.get("/mypage", (req,res) => {
-  res.sendFile(__dirname + "/public/mypage.html");
-});
-app.get("/diary", (req,res) => {
->>>>>>> 3ce175b46ce46d8e7f9fe86d88ca68400dbb3a8a
+
   res.sendFile(__dirname + "/public/diary.html");
 });
 
