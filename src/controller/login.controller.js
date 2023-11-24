@@ -8,14 +8,16 @@ async function signIn(req, res, next) {
     const signIn_data = await loginService.signIn(signIn_req);
     return res.status(signIn_data.Status).json(signIn_data);
 }
-async function signUp(req, res, next) {
+async function signUp(req, res) {
     console.log("컨트롤러 들어옴");
     const signUp_req = req.body;
     console.log("데이터 들어오는거 확인", signUp_req);
     const signUp_data = await loginService.signUp(signUp_req);
-    return res.status(signUp_data.Status).json(signUp_data);
+    var msg = "가입 완료";
+    var data = {code : signUp_data,
+                msg : msg};
+    return res.redirect("/");
 }
-
 
 module.exports = {
     signIn,
