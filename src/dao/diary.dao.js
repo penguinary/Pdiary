@@ -2,7 +2,6 @@ const db = require('../config/db')
 const logger = require('../config/logger')
 
 //get_main_dao
-
 async function postDiary(postDiary_req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
@@ -22,7 +21,29 @@ async function postDiary(postDiary_req) {
         })
     })
 }
+async function getDiary(getDiary_req) {
+    console.log(req.user_id);
+    return new Promise((resolve, reject) => {
+        var queryData = `SELECT diary_theme, diary_category, diary_title, user.user_nickname, diary_date, diary_weather, diary_img, diary_content
+            FROM user 
+            JOIN diary ON user.user_id = diary.user_id 
+            WHERE diary.diary_id = ${diary_id}`;
+        console.log(queryData);
+        db.query(queryData, (error, db_data) => {
+            if(error) {
+                logger.error(
+                    'DB error [diary]' +
+                    '\n \t' + queryData +
+                    '\n \t' + error
+                )
+                reject("DB ERR")
+            }
+            resolve(db_data)
+        })
+    })
+}
 
 module.exports = {
-    postDiary
+    postDiary,
+    getDiary
 }

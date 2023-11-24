@@ -51,8 +51,8 @@ app.use(function (err, req, res, next) {
     res.send({ Message: "예외적이거나 예측하지 못한 에러 발생", Status: 500 });
   });
 
-app.listen(3500,()=>{  //포트설정
-    console.log('3500번 포트에서 서버 대기중입니다!');
+app.listen(5500,()=>{  //포트설정
+    console.log('5500번 포트에서 서버 대기중입니다!');
 });
 
 module.exports = app;
