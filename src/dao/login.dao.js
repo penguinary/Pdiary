@@ -3,11 +3,9 @@ const logger = require('../config/logger')
 
 //get_main_dao
 async function signIn(req) {
-    console.log(req.user_webid, req.user_webpw);
     return new Promise((resolve, reject) => {
         var queryData = `select user_nickname, user_id from user
         where user_webid = '${req.user_webid}' and user_webpw = '${req.user_webpw}'`;
-        console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
                 logger.error(

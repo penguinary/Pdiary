@@ -11,10 +11,20 @@ async function signIn(signIn_req) {
             }
         }
         const signIn_data = await loginDao.signIn(signIn_req);
-        return {
-            "Message" : "성공",
-            "Status" : 200,
-            "Data" : signIn_data
+        console.log(signIn_data)
+        if(!signIn_data) {
+            return {
+                "Message" : "로그인 실패",
+                "Status" : 404,
+                "Data" : signIn_data
+            }
+        }
+        else{
+            return {
+                "Message" : "성공",
+                "Status" : 200,
+                "Data" : signIn_data
+            }
         }
     } catch(err) {
         return {

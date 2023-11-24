@@ -1,12 +1,17 @@
 const loginService = require("../service/login.service");
 
-//get_main_controller
-async function signIn(req, res, next) {
+//signIn controller
+async function signIn(loginreq, res) {
     console.log("로그인 컨트롤러 들어옴");
-    const signIn_req = req.query;
-    console.log("로그인 데이터 들어오는거 확인", signIn_req);
-    const signIn_data = await loginService.signIn(signIn_req);
-    return res.status(signIn_data.Status).json(signIn_data);
+    const signIn_data = await loginService.signIn(loginreq);
+    if(!signIn_data) {
+        alert("로그인 실패");
+        return res.redirect("/login");
+    }
+    else {
+        console.log("로그인 성공");
+        return res.redirect("/board");
+    }
 }
 async function signUp(req, res) {
     console.log("컨트롤러 들어옴");

@@ -40,7 +40,6 @@ app.get("/mypage", (req, res) => {
   res.sendFile(__dirname + "/public/mypage.html");
 });
 app.get("/diary", (req, res) => {
-
   res.sendFile(__dirname + "/public/diary.html");
 });
 
