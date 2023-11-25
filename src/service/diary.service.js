@@ -24,29 +24,6 @@ async function postDiary(postDiary_req) {
         }
     }
 }
-async function getDiary(getDiary_req) {
-    console.log("서비스 들어옴");
-    try {
-        if(!getDiary_req) {
-            return {
-                "Message" : "요청 값이 없습니다.",
-                "Status" : 406
-            }
-        }
-        const getDiary_data = await diaryDao.getDiary(getDiary_req);
-        return {
-            "Message" : "성공",
-            "Status" : 200,
-            "Data" : getDiary_data
-        }
-    } catch(err) {
-        return {
-            "Message" : "실패",
-            "Status" : 400,
-            "Error_Message" : err
-        }
-    }
-}
 
 async function putDiary(putDiary_req) {
     console.log("서비스 들어옴");
@@ -74,6 +51,5 @@ async function putDiary(putDiary_req) {
 
 module.exports = {
     postDiary,
-    putDiary,
-    getDiary
+    putDiary
 }

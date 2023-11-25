@@ -10,6 +10,7 @@ var loginRouter = require('./routes/login.routes');
 var diaryRouter = require('./routes/diary.routes');
 var boardRouter = require('./routes/board.routes');
 var mypageRouter = require('./routes/mypage.routes');
+var setdiaryRouter = require('./routes/setdiary.routes');
 
 //view engine setup
 app.set('view engine', 'pug');
@@ -30,6 +31,7 @@ app.use("/login", loginRouter);
 app.use("/diary", diaryRouter);
 app.use("/board", boardRouter);
 app.use("/mypage", mypageRouter);
+app.use("/setdiary", setdiaryRouter);
 // app.use("/board", boardRouter);
 
 // catch 404 and forward to error handler

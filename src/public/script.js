@@ -9,7 +9,7 @@ class Board {
 }
 //일기 작성 버튼
 function moveBoard() {
-  location.href = "index.html";
+  location.href = "/setdiary.html";
 }
 function moveToLogin() {
   location.href = "login.html";

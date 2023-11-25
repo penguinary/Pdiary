@@ -343,7 +343,9 @@
         param.diary_category=$("#da-boardType").val();
         param.diary_theme=$("#da-Theme").val();
         param.diary_private = $("#da-Private").is(":checked") ? 1 : 0;
-        param.diary_date=$("#da-dateMonth").val() + $("#da-dateDay").val() + $("#da-dateToday").val();
+        param.diary_month=$("#da-dateMonth").val();
+        param.diary_day=$("#da-dateDay").val();
+        param.diary_today=$("#da-dateToday").val();
         param.diary_weather=$("input[name='weather']:checked").val();
         param.diary_content=$("#da-write").val();
 
