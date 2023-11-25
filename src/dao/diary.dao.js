@@ -6,9 +6,9 @@ const logger = require('../config/logger')
 async function postDiary(req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
-        var queryData = `insert into diary (user_id, diary_title, diary_category, diary_theme, diary_private, diary_date, diary_weather, diary_content) 
-        values (${req.user_id}, '${req.diary_title}', ${req.diary_category}, ${req.diary_theme}, ${req.diary_private}, '${req.diary_date}', 
-        ${req.diary_weather}, '${req.diary_content}')`;
+        var queryData = `insert into diary (user_id, diary_title, diary_category, diary_theme, diary_private, diary_month, diary_day, diary_today, diary_weather, diary_content) 
+        values (${req.user_id}, '${req.diary_title}', ${req.diary_category}, ${req.diary_theme}, ${req.diary_private}, '${req.diary_month}', 
+        '${req.diary_day}', '${req.diary_today}', ${req.diary_weather}, '${req.diary_content}')`;
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
@@ -29,7 +29,7 @@ async function putDiary(req) {
     return new Promise((resolve, reject) => {
         var queryData = `update diary
         set diary_title='${req.diary_title}', diary_category=${req.diary_category}, diary_theme=${req.diary_theme},
-        diary_private=${req.diary_private}, diary_date='${req.diary_date}', diary_weather=${req.diary_weather}, diary_content='${req.diary_content}' 
+        diary_private=${req.diary_private}, diary_month='${req.diary_month}', diary_day='${req.diary_day}', diary_today='${req.diary_today}', diary_weather=${req.diary_weather}, diary_content='${req.diary_content}' 
         where diary_id=${req.diary_id} `;
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
@@ -45,6 +45,7 @@ async function putDiary(req) {
         })
     })
 }
+<<<<<<< HEAD
 async function getDiary(getDiary_req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
@@ -65,9 +66,11 @@ async function getDiary(getDiary_req) {
         })
     })
 }
+=======
+
+>>>>>>> origin/feature/diary
 
 module.exports = {
     postDiary,
-    putDiary,
-    getDiary
+    putDiary
 }

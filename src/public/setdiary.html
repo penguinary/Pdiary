@@ -6,7 +6,7 @@
     <title>setdiary page</title>
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="setdiary.css" />
+
   </head>
   <body class="main">
     <header></header>
@@ -33,7 +33,7 @@
       <!-- 컨테이너 부분 (테마 배경 부분) -->
       <section id="sd-mainContainer">
         <section id="sd-containerTitle">
-          <h2 id="sd-title">제목 : 웹 프로그래밍 발표</h2>
+          <h2 id="sd-title"></h2>
           <p id="sd-username">황제펭귄</p>
         </section>
         <!-- 일기 내용 부분 -->
@@ -119,5 +119,26 @@
         <button>삭제</button>
       </div>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+    <script>
+      window.onload = function () {
+        getDiary(17);
+      };
+
+      function getDiary(diaryid) {
+        ajax=$.ajax({
+          url: "/setdiary",
+          data: {diary_id : 17},
+          type: "GET",
+          dataType: "JSON",
+          success: function(result) {
+            console.log(result);
+          }
+
+        });
+      }
+    </script>
   </body>
 </html>
