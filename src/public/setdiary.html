@@ -108,7 +108,7 @@
             </div>
           </div>
           <!-- 그림부분 -->
-          <div id="sd-image"></div>
+          <div id="sd-image" style="background-image: url('');"></div>
           <!-- 일기부분 -->
           <textarea id="sd-write"></textarea>
         </section>
@@ -124,7 +124,7 @@
   
     <script>
       window.onload = function () {
-        getDiary(18);
+        getDiary(30);
       };
 
       function getDiary(diaryid) {
@@ -133,13 +133,14 @@
           type: "GET",
           dataType: "JSON",
           success : function(data) {
+
             $('#sd-title').text(data.Data[0].diary_title);
             $('#sd-username').text(data.Data[0].user_nickname);
             $('#sd-month').text(data.Data[0].diary_month);
             $('#sd-day').text(data.Data[0].diary_day);
             $('#sd-dateToday').text(data.Data[0].diary_today);
             $('#sd-write').text(data.Data[0].diary_content);
-
+            $('#sd-image').css("background-image", `url("${data.Data[0].diary_img}")`);
             switch(data.Data[0].diary_weather) {
               case 0:
                 $('#sd-sunny').attr("fill", "#7d7eef");

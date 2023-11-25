@@ -337,6 +337,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
       function postdiary() {
+        const canvas = document.getElementById('da-canvas');
+        const dataURL = canvas.toDataURL();
+        
         var param={};
         param.user_id = 1;
         param.diary_title=$("#da-title").val();
@@ -348,6 +351,7 @@
         param.diary_today=$("#da-dateToday").val();
         param.diary_weather=$("input[name='weather']:checked").val();
         param.diary_content=$("#da-write").val();
+        param.diary_img=dataURL;
 
         var ajax=$.ajax({
           url: "/diary",
