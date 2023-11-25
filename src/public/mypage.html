@@ -17,13 +17,9 @@
       //   $('#mp-info-birth').text(data.Data[0].user_birthday)
       // })
       window.onload = function () {
-<<<<<<< HEAD
-        getData(8);
-=======
-        getData(3);
->>>>>>> 1ede67a0e0b67ff4e65e5ac33c20b7bfb429f289
+        getDiary(3);
       };
-      function getData(user_id) {
+      function getDiary(user_id) {
         ajax=$.ajax({
           url: `/mypage?user_id=${user_id}`,
           type: "GET",
