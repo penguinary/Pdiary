@@ -5,7 +5,8 @@ const logger = require('../config/logger')
 async function getMyDiary(req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
-        var queryData = `select diary_id, diary_title, diary_date, diary_category, diary_private from diary
+        var queryData = `select user_nickname, user_webid, user_email, user_birthday
+        from user
         where user_id = ${req.user_id}`;
         console.log(queryData);
         db.query(queryData, (error, db_data) => {

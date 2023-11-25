@@ -6,6 +6,36 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <title>MyPage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // let data = !{data}
+      // // let len = Object.keys(data).length
+      // $(document).ready(function() {
+      //   $('#mp-info-nick').text(data.Data[0].user_nickname)
+      //   $('#mp-info-id').text(data.Data[0].user_webid)
+      //   $('#mp-info-email').text(data.Data[0].user_email)
+      //   $('#mp-info-birth').text(data.Data[0].user_birthday)
+      // })
+      window.onload = function () {
+        getData(3);
+      };
+      function getData(user_id) {
+        ajax=$.ajax({
+          url: `/mypage?user_id=${user_id}`,
+          type: "GET",
+          dataType: "JSON",
+          success : function(data){
+            $('#mp-info-nick').text(data.Data[0].user_nickname)
+            $('#mp-info-id').text(data.Data[0].user_webid)
+            $('#mp-info-email').text(data.Data[0].user_email)
+            $('#mp-info-birth').text(data.Data[0].user_birthday)
+          },
+          error : function(error){
+            console.error('Error fetching data: ',error);
+          }
+        });
+      }
+    </script>
   </head>
   <body class="mypage">
     <header></header>
@@ -30,20 +60,22 @@
         <table class="mp-info-tb">
           <tr>
             <td class="mp-info-td">닉네임 </td>
-            <td>&nbsp;${member.user_nickname}</td>
+            <td id="mp-info-nick">&nbsp;</td>
           </tr>
           <tr>
             <td class="mp-info-td">아이디 </td>
-            <td>&nbsp;${member.user_id}</td>
+            <td id="mp-info-id">&nbsp;</td>
           </tr>
           <tr>
-            <td class="mp-info-td">쓴 일기 수 </td>
-            <td>&nbsp;${member.user_diary_count}</td>
+            <td class="mp-info-td">이메일 </td>
+            <td id="mp-info-email">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="mp-info-td">생년월일 </td>
+            <td id="mp-info-birth">&nbsp;</td>
           </tr>
         </table>
       </form>
-<<<<<<< HEAD
-=======
       <br /><br /><br />
       <hr style="width: 90%; border-color: black" />
       <h2 class="mp-h">내가 쓴 일기</h2>
@@ -89,7 +121,6 @@
       <h2 class="mp-h">
         <a href="infoEdit.html" class="mp-h">회원정보 수정</a>
       </h2>
->>>>>>> origin/feature/index
     </section>
   </body>
 </html>
