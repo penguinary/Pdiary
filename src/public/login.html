@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <script type="text/javascript">
-      function signup(){
+      function signup() {
         var param={};
         param.user_webid=$("lg-signup-user").val()
         param.user_webpw=$("lg-signup-pass").val()
@@ -18,7 +18,17 @@
           url: "/login",
           data: param,
           type: "POST",
-          dataType: "JSON",
+          dataType: "JSON"
+        });
+      }
+      function signin() {
+        var param={};
+        param.user_webid=$("lg-signin-user").val()
+        param.user_webpw=$("lg-signin-pass").val()
+        var ajax = $.ajax({
+          url: "/login",
+          data: param,
+          type: "POST"
         });
       }
     </script>
@@ -28,6 +38,7 @@
   >
     <div class="lg-wrap">
       <div class="lg-html">
+        <!--제일 상단 버튼-->
         <input
           id="lg-tab-1"
           type="radio"
@@ -42,25 +53,30 @@
           class="lg-sign-up"
         /><label for="lg-tab-2" class="lg-tab">Sign Up</label>
         <div class="lg-form">
+        <!--sign in form-->
+        <form action="/login" method="post">
           <div class="lg-sign-in-htm">
             <div class="lg-group">
               <label for="lg-signin-user" class="lg-label">User Id</label>
-              <input id="lg-signin-user" type="text" class="lg-input" />
+              <input id="lg-signin-user" name="user_webid" type="text" class="lg-input" />
             </div>
             <div class="lg-group">
               <label for="lg-signin-pass" class="lg-label">PassWord</label>
               <input
                 id="lg-signin-pass"
+                name="user_webpw"
                 type="password"
                 class="lg-input"
                 data-type="password"
               />
             </div>
             <div>
-              <input type="submit" class="lg-button" value="Sign In" />
+              <input type="submit" onclick="signin()" class="lg-button" value="Sign In" />
             </div>
             <div class="lg-hr"></div>
           </div>
+        </form>
+        <!--sign up form-->
           <form action="/login" method="post">
             <div class="lg-sign-up-htm">
               <div class="lg-group">
