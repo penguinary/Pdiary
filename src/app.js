@@ -33,6 +33,9 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.sendFile(__dirname + "/public/login.html");
 })
+app.get("/signup",(req,res) => {
+  res.sendFile( __dirname + "/public/signup.html");
+})
 app.get("/board", (req, res) => {
   res.sendFile(__dirname + "/public/board.html");
 });
@@ -43,7 +46,7 @@ app.get("/diary", (req, res) => {
   res.sendFile(__dirname + "/public/diary.html");
 });
 
-app.use("/login", loginRouter);
+app.use("/", loginRouter);
 app.use("/diary", diaryRouter);
 app.use("/board", boardRouter);
 app.use("/mypage", mypageRouter);

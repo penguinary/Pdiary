@@ -43,7 +43,27 @@ async function updateData(req) {
     })
 }
 
+async function getData(req) {
+    console.log("getData", req.user_id);
+    return new Promise((resolve, reject) => {
+        var queryData = `select user_webid, user_nickname, user_email, user_birthday from user where user_id = ${req.user_id}`;
+        console.log(queryData);
+        db.query(queryData, (error, db_data) => {
+            if(error) {
+                logger.error(
+                    'DB error [diary]' +
+                    '\n \t' + queryData +
+                    '\n \t' + error
+                )
+                reject("DB ERR")
+            }
+            resolve(db_data)
+        })
+    })
+}
+
 module.exports = {
     getMyDiary,
-    updateData
+    updateData,
+    getData
 }

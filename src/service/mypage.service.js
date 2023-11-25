@@ -49,7 +49,32 @@ async function updateData(update_req) {
     }
 }
 
+async function getData(post_req) {
+    console.log("데이터 서비스 들어옴", post_req);
+    try {
+        if(!post_req) {
+            return {
+                "Message" : "요청 값이 없습니다.",
+                "Status" : 406
+            }
+        }
+        const post_data = await mypageDao.getData(post_req);
+        return {
+            "Message" : "성공",
+            "Status" : 200,
+            "Data" : post_data
+        }
+    } catch(err) {
+        return {
+            "Message" : "실패",
+            "Status" : 400,
+            "Error_Message" : err
+        }
+    }
+}
+
 module.exports = {
     getMyDiary,
-    updateData
+    updateData,
+    getData
 }

@@ -7,9 +7,19 @@ class Board {
     this.title = title;
   }
 }
-function moveToLogin() {
-  location.href = "login.html";
+//일기 작성 버튼
+function moveBoard() {
+  location.href = "/setdiary";
 }
+function moveToLogin() {
+  location.href = "/login";
+}
+function moveToSignup(){
+  location.href="/signup";
+}
+// function moveToMypage(){
+//   location.href="/mypage"
+// }
 //셀렉트 변경 알림(test)
 function changeSelect() {
   var value_category = document.getElementById("bd_category");
