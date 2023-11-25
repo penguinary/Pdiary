@@ -27,7 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //router
-<<<<<<< HEAD
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
@@ -44,8 +43,6 @@ app.get("/diary", (req, res) => {
   res.sendFile(__dirname + "/public/diary.html");
 });
 
-=======
->>>>>>> origin/feature/diary
 app.use("/login", loginRouter);
 app.use("/diary", diaryRouter);
 app.use("/board", boardRouter);

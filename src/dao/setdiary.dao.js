@@ -7,7 +7,7 @@ async function getDiary(req) {
         var queryData = `SELECT diary_theme, diary_category, diary_title, user.user_nickname, diary_month, diary_day, diary_today, diary_weather, diary_content
             FROM diary 
             JOIN user ON diary.user_id = user.user_id 
-            WHERE diary_id = ${req.diary_id}`;
+            WHERE diary.diary_id = ${req.diary_id}`;
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {

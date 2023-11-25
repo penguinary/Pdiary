@@ -45,30 +45,7 @@ async function putDiary(req) {
         })
     })
 }
-<<<<<<< HEAD
-async function getDiary(getDiary_req) {
-    console.log(req.user_id);
-    return new Promise((resolve, reject) => {
-        var queryData = `SELECT d.diary_theme, d.diary_category, d.diary_title, u.user_nickname, 
-            d.diary_date, d.diary_weather, d.diary_content
-            FROM user u, diary d WHERE diary.diary_id = ${diary_id}`;
-        console.log(queryData);
-        db.query(queryData, (error, db_data) => {
-            if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
-                reject("DB ERR")
-            }
-            resolve(db_data)
-        })
-    })
-}
-=======
 
->>>>>>> origin/feature/diary
 
 module.exports = {
     postDiary,
