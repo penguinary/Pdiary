@@ -165,7 +165,6 @@ body a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 0 2rem;
 }
 
@@ -372,6 +371,7 @@ body a {
   --color-background: var(--color-purple-100);
   --color-background-none: none;
 }
+
 /* 메인 */
 #sd-main {
   width: 45rem;
@@ -428,7 +428,7 @@ body a {
   height: 38.75rem;
   border-radius: 4px;
   padding: 0 1rem 1rem 1rem;
-  background-color: white;
+  background-color: transparent;
   border: 1px solid black;
 }
 
