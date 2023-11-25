@@ -4,7 +4,7 @@ const logger = require('../config/logger')
 async function getDiary(req) {
     console.log(req.diary_id);
     return new Promise((resolve, reject) => {
-        var queryData = `SELECT diary_theme, diary_category, diary_title, user.user_nickname, diary_month, diary_day, diary_today, diary_weather, diary_content, diary_img
+        var queryData = `SELECT diary_id, diary_theme, diary_category, diary_title, user.user_nickname, diary_month, diary_day, diary_today, diary_weather, diary_content, diary_img
             FROM diary 
             JOIN user ON diary.user_id = user.user_id 
             WHERE diary.diary_id = ${req.diary_id}`;

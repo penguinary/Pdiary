@@ -70,9 +70,12 @@ body a {
 .bd_item {
   cursor: pointer;
 }
-.bd_item img {
+.bd_item div {
   width: 250px;
   height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .bd_select {
   width: 150px;
