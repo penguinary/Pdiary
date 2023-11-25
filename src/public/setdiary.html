@@ -123,9 +123,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   
     <script>
-      window.onload = function () {
-        getDiary(30);
+       window.onload = function () {
+        const searchParams= new URLSearchParams(location.search);
+        getDiary(searchParams.get('diary_id'));
       };
+
 
       function getDiary(diaryid) {
         ajax=$.ajax({
