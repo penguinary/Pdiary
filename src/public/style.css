@@ -561,7 +561,7 @@ body a {
   width: 230px;
 }
 
-/* 회원정보 수정 css
+회원정보 수정 css
 
  ****제거대상****
 
@@ -608,7 +608,7 @@ body a {
 .mp-info-edit-button:active {
   box-shadow: -2px -2px 12px 0px #0002, 2px 2px 12px 0px #0002,
     -2px -2px 12px 0px #fff9, 2px 2px 12px 0px #fff9;
-} */
+}
 
 /* 로그인 css */
 .clearfix:after,

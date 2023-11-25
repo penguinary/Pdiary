@@ -30,7 +30,7 @@ async function putDiary(req) {
         var queryData = `update diary
         set diary_title='${req.diary_title}', diary_category=${req.diary_category}, diary_theme=${req.diary_theme},
         diary_private=${req.diary_private}, diary_month='${req.diary_month}', diary_day='${req.diary_day}', diary_today='${req.diary_today}', diary_weather=${req.diary_weather}, diary_content='${req.diary_content}' 
-        where diary_id=${req.diary_id} `;
+        where diary_id=${req.diary_id}`;
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
@@ -45,31 +45,6 @@ async function putDiary(req) {
         })
     })
 }
-<<<<<<< HEAD
-async function getDiary(getDiary_req) {
-    console.log(req.user_id);
-    return new Promise((resolve, reject) => {
-        var queryData = `SELECT d.diary_theme, d.diary_category, d.diary_title, u.user_nickname, 
-            d.diary_date, d.diary_weather, d.diary_content
-            FROM user u, diary d WHERE diary.diary_id = ${diary_id}`;
-        console.log(queryData);
-        db.query(queryData, (error, db_data) => {
-            if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
-                reject("DB ERR")
-            }
-            resolve(db_data)
-        })
-    })
-}
-=======
-
->>>>>>> origin/feature/diary
-
 module.exports = {
     postDiary,
     putDiary

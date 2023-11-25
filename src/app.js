@@ -27,12 +27,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //router
-<<<<<<< HEAD
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 app.get("/login", (req, res) => {
   res.sendFile(__dirname + "/public/login.html");
+})
+app.get("/signup",(req,res) => {
+  res.sendFile( __dirname + "/public/signup.html");
 })
 app.get("/board", (req, res) => {
   res.sendFile(__dirname + "/public/board.html");
@@ -44,9 +46,7 @@ app.get("/diary", (req, res) => {
   res.sendFile(__dirname + "/public/diary.html");
 });
 
-=======
->>>>>>> origin/feature/diary
-app.use("/login", loginRouter);
+app.use("/", loginRouter);
 app.use("/diary", diaryRouter);
 app.use("/board", boardRouter);
 app.use("/mypage", mypageRouter);

@@ -1,9 +1,9 @@
 const mypageService = require("../service/mypage.service");
 //get_main_controller
 async function getMyDiary(req, res, next) {
-    console.log("컨트롤러 들어옴");
+    console.log("다이어리 컨트롤러 들어옴");
     const getMyDiary_req = { user_id : 3 };
-    console.log("데이터 들어오는거 확인", getMyDiary_req);
+    console.log("다이어리 데이터 들어오는거 확인", getMyDiary_req);
     const getMyDiary_data = await mypageService.getMyDiary(getMyDiary_req);
     return res.status(getMyDiary_data.Status).json(getMyDiary_data);
 }
@@ -22,7 +22,15 @@ async function updateData(req, res) {
     return res.redirect("/mypage");
 }
 
+async function getData(req, res) {
+    const getData_req = req.query;
+    console.log("데이터 들어오는거 확인", getData_req);
+    const getData_data = await mypageService.getData(getData_req);
+    return res.status(getData_data.Status).json(getData_data);
+}
+
 module.exports = {
     getMyDiary,
-    updateData
+    updateData,
+    getData
 }
