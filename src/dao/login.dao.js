@@ -12,7 +12,7 @@ async function signIn(id, pw) {
                 reject("DB ERR")
             }
             if(!db_data.length){
-                console.error(error);
+                console.error(error)
                 db_data = "empty"
             }
             resolve(db_data)
