@@ -46,7 +46,6 @@ async function putDiary(req) {
     })
 }
 
-
 module.exports = {
     postDiary,
     putDiary

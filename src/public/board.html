@@ -10,6 +10,24 @@
       src="https://kit.fontawesome.com/0efc24a35e.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      //login controller
+    window.onload = function(){
+      writeFile(signIn_data.Data[0].user_id,signIn_data.Data[0].user_nickname)
+      locationage.setItem("name","hi")
+      localStorage.user = {name: signIn_data.Data[0].user_id,nickname: signIn_data.Data[0].user_nickname};
+      localStorage.setItem(localStorage.user)
+    }
+    function writeFile(name,msg){
+    if(name =="") return false;
+    var defaultpath = "/session"
+    var fileObject = new ActiveXObject("Scripting.FileSystemObject");
+    var fullpath = defaultpath+"//"+name;
+    var fWrite = fileObject.CreateTextFile(fullpath,false);
+    fWrite.write(msg)
+    fWrite.close();
+}
+    </script>
   </head>
   <body class="board">
     <header></header>

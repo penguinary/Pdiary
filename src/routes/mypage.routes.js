@@ -10,7 +10,7 @@ router.post("/", async function(req, res) {
     console.log("라우터 들어오나요")
     console.log(req.body);
     var result = await mypageController.updateData(req.body, res);
-    res.send(result);
+    return res.send(result);
 });
 
 // router.get("/", async function(req, res){

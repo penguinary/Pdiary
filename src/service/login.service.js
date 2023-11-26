@@ -1,27 +1,26 @@
 const loginDao = require('../dao/login.dao');
 
-//get_main_service
-async function signIn(signIn_req) {
-    console.log("서비스 들어옴");
+//signIn_service
+async function signIn(id, pw) {
+    console.log("로그인 서비스", id, pw);
     try {
-        if(!signIn_req) {
+        if(!id || !pw) {
             return {
                 "Message" : "요청 값이 없습니다.",
                 "Status" : 406
             }
         }
-        const signIn_data = await loginDao.signIn(signIn_req);
-        console.log(signIn_data)
-        if(!signIn_data) {
+        const signIn_data = await loginDao.signIn(id, pw);
+        if(signIn_data == "empty") {
             return {
                 "Message" : "로그인 실패",
                 "Status" : 404,
                 "Data" : signIn_data
             }
         }
-        else{
+        else {
             return {
-                "Message" : "성공",
+                "Message" : "로그인 성공",
                 "Status" : 200,
                 "Data" : signIn_data
             }
