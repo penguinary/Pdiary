@@ -77,6 +77,15 @@ body a {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.bd_title {
+  display: inline-block;
+  width: 6rem;
+  white-space: nowrap;     
+  overflow: hidden;       
+  text-overflow: ellipsis;
+}
+
 .bd_select {
   width: 150px;
   height: 35px;
@@ -502,7 +511,7 @@ body a {
   resize: none;
 }
 /* 수정 삭제 버튼 */
-#sd-button {
+/* #sd-button {
   text-align: right;
 }
 #sd-button button {
@@ -520,7 +529,7 @@ body a {
 }
 #sd-button button:hover {
   background-color: var(--color-purple-700);
-}
+} */
 /* 마이페이지 css */
 .mp-h {
   text-decoration-line: none;

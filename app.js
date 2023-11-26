@@ -2,18 +2,30 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
-// var logger = require("morgan");
+var logger = require("morgan");
+const session = require('express-session');
+const fileStore = require('session-file-store')(session);
+
+var app = express();
+app.use(cookieParser('penguin'));
 
 //router path
-var app = express();
-var loginRouter = require('./src/routes/login.routes');
-var diaryRouter = require('./src/routes/diary.routes');
-var boardRouter = require('./src/routes/board.routes');
-var mypageRouter = require('./src/routes/mypage.routes');
-var setdiaryRouter = require('./src/routes/setdiary.routes');
+var loginRouter = require('./routes/login.routes');
+var diaryRouter = require('./routes/diary.routes');
+var boardRouter = require('./routes/board.routes');
+var mypageRouter = require('./routes/mypage.routes');
+var setdiaryRouter = require('./routes/setdiary.routes');
 
+app.use(session({
+  name: 'server-session-cookie-id',
+  secret: 'penguin',
+  resave: false,
+  saveUninitialized: true,
+  store: new fileStore()
+}));
 //view engine setup
-app.set('view engine', 'pug');
+app.set('view engine', 'html');
+// nunjucks.configure('views', {express: app});
 app.set('views',path.join(__dirname,'views'));
 app.use('/', express.static(path.join(__dirname,'public'))); //????
 
@@ -24,21 +36,21 @@ app.use('/', express.static(path.join(__dirname,'public'))); //????
 // }
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('secret'));
+app.use('/', express.static(path.join(__dirname,'public')));
 
-//router
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
+  return res.sendFile(__dirname + "/public/index.html");
+})
 app.get("/login", (req, res) => {
-  res.sendFile(__dirname + "/public/login.html");
+  return res.sendFile(__dirname + "/public/login.html");
 })
 app.get("/signup",(req,res) => {
   res.sendFile( __dirname + "/public/signup.html");
 })
-app.get("/board", (req, res) => {
-  res.sendFile(__dirname + "/public/board.html");
-});
+// app.get("/board", (req, res) => {
+//   res.sendFile(__dirname + "/public/board.html");
+// });
 // app.get("/mypage", (req, res) => {
 //   res.sendFile(__dirname + "/public/mypage.html");
 // });

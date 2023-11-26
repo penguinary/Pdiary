@@ -339,8 +339,10 @@
       function postdiary() {
         const canvas = document.getElementById('da-canvas');
         const dataURL = canvas.toDataURL();
+        var diaryTime = new Date();
         
         var param={};
+        param.diary_time = diaryTime.toISOString().slice(0, 19).replace('T', ' ');
         param.user_id = 1;
         param.diary_title=$("#da-title").val();
         param.diary_category=$("#da-boardType").val();
