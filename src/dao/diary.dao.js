@@ -1,7 +1,4 @@
 const db = require('../config/db')
-// const logger = require('../config/logger')
-
-//get_main_dao
 
 async function postDiary(req) {
     console.log(req.user_id);

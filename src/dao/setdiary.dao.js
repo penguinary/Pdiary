@@ -1,5 +1,4 @@
 const db = require('../config/db')
-// const logger = require('../config/logger')
 
 async function getDiary(req) {
     console.log(req.diary_id);

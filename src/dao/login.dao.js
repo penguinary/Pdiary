@@ -1,5 +1,4 @@
 const db = require('../config/db')
-// const logger = require('../config/logger')
 
 //get_main_dao
 async function signIn(id, pw) {
