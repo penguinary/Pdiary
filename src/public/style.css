@@ -145,6 +145,11 @@ body a {
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+.bd_title{
+  text-align: left;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
 #da-html {
   --color-grey-100: rgb(201, 201, 201);
   --color-grey-400: rgb(140, 140, 140);
