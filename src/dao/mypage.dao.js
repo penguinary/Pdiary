@@ -23,6 +23,7 @@ async function getMyDiary(req) {
     })
 }
 
+
 async function updateData(req) {
     console.log("dao 들어옴", req)
     return new Promise((resolve, reject) => {
@@ -45,5 +46,6 @@ async function updateData(req) {
 
 module.exports = {
     getMyDiary,
-    updateData
+    updateData,
+
 }

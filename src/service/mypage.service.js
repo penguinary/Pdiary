@@ -1,6 +1,7 @@
 const mypageDao = require('../dao/mypage.dao');
 
 //get_main_service
+
 async function getMyDiary(getMyDiary_req) {
     console.log("서비스 들어옴");
     try {
@@ -24,6 +25,7 @@ async function getMyDiary(getMyDiary_req) {
         }
     }
 }
+
 
 async function updateData(update_req) {
     console.log("서비스 들어옴", update_req);

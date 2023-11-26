@@ -17,8 +17,10 @@
       //   $('#mp-info-birth').text(data.Data[0].user_birthday)
       // })
       window.onload = function () {
-        getData(3);
-      };
+        getData(2);  
+        getData2(3);      
+      }
+    
       function getData(user_id) {
         ajax=$.ajax({
           url: `/mypage?user_id=${user_id}`,
@@ -35,6 +37,7 @@
           }
         });
       }
+    
     </script>
   </head>
   <body class="mypage">
@@ -82,14 +85,14 @@
       <form>
         <table class="mp-dr-tb">
           <tr>
-            <td class="mp-dr-td">${member.diary_date} |</td>
-            <td>&nbsp;${member.diary_contents}</td>
-            <td class="mp-dr-td">-${member.diary_group}</td>
+            <td class="mp-dr-td" >${member.diary_date} |</td>
+            <td >&nbsp;${member.diary_contents}</td>
+            <td class="mp-dr-td" >-${member.diary_group}</td>
           </tr>
           <!--충돌을 위한 주석문입니다.-->
           <tr>
             <td class="mp-dr-td">${member.diary_date} |</td>
-            <td>&nbsp;${member.diary_contents}</td>
+            <td >&nbsp;${member.diary_contents}</td>
             <td class="mp-dr-td">-${member.diary_group}</td>
           </tr>
           <tr>
