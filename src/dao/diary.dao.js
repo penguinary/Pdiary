@@ -45,7 +45,6 @@ async function putDiary(req) {
         })
     })
 }
-<<<<<<< HEAD
 async function getDiary(getDiary_req) {
     console.log(req.user_id);
     return new Promise((resolve, reject) => {
@@ -66,9 +65,6 @@ async function getDiary(getDiary_req) {
         })
     })
 }
-=======
-
->>>>>>> origin/feature/diary
 
 module.exports = {
     postDiary,
