@@ -5,23 +5,31 @@ const loginController = require("../controller/login.controller");
 
 // 로그인
 router.post("/login", async function(req,res){
+    // if(!req.session.user_id) {
+    //     console.log("user_id없음")
+    // } else {
+    //     req.session.destroy(function(){
+    //         console.log("세션있나", req.session);
+    //         res.session;
+    //     });
+    // }
     console.log("로그인라우터", req.body.user_webid, req.body.user_webpw)
     var loginResult = await loginController.signIn(req, res);
     return res.send(loginResult);
 });
 
-router.get("/logout", function(req, res) {
-    console.log("clear cookie");
-    req.session.destroy(function(err){
-        if(err) {
-            console.error(err);
-            return res.redirect("/");
-        } else {
-            res.clearCookie(options.name);
-            return res.redirect("/");
-        }
-    })
-});
+// router.get("/logout", function(req, res) {
+//     console.log("clear cookie");
+//     req.session.destroy(function(err){
+//         if(err) {
+//             console.error(err);
+//             return res.redirect("/");
+//         } else {
+//             res.clearCookie(options.name);
+//             return res.redirect("/");
+//         }
+//     })
+// });
 
 // 회원가입
 router.post("/signup", async function(req,res){
