@@ -373,6 +373,11 @@ body a {
 
   resize: none;
 }
+.da-day{
+  font-size: larger;
+  font-weight: bold;
+  writing-mode: sideways-lr;
+}
 #sd-html {
   --color-grey-100: rgb(201, 201, 201);
   --color-grey-400: rgb(140, 140, 140);
