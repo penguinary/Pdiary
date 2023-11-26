@@ -4,13 +4,7 @@ const diaryService = require("../service/diary.service");
 async function postDiary(req, res, next) {
     console.log("컨트롤러 들어옴");
     const user_id = req.session.user_id;
-
-    // 세션에 user_id가 없을 경우 막음
-    if (!user_id) {
-        return res.status(401).json({ Status: 401, Message: '로그인 후 이용해주세요!' });
-    }
-
-    const postDiary_req = { ...req.body, user_id };
+    const postDiary_req = {...req.body, user_id };
     
     console.log("데이터 들어오는거 확인", postDiary_req);
     const postDiary_data = await diaryService.postDiary(postDiary_req);
