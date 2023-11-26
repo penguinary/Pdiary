@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function signin() {
+        var param={};
+        param.user_webid=$("lg-signin-user").val()
+        param.user_webpw=$("lg-signin-pass").val()
+        var ajax = $.ajax({
+          url: "/login",
+          data: param,
+          type: "POST"
+        });
+      }
+    </script>
+  </head>
+  <body
+    style="margin: 0; color: #6a6f8c; background: #c8c8c8; font: 600 16px/18px"
+  >
+    <div class="lg-wrap">
+      <div class="lg-html">
+        <!--제일 상단 버튼-->
+        <input
+          id="lg-tab-1"
+          type="radio"
+          name="lg-tab"
+          class="lg-sign-in"
+          checked
+        /><label for="lg-tab-1" class="lg-tab">Sign In</label>
+        <input
+          id="lg-tab-2"
+          type="radio"
+          name="lg-tab"
+          class="lg-sign-up"
+          disabled
+        /><label for="lg-tab-2" class="lg-tab">Sign Up</label>
+        <div class="lg-form">
+        <!--sign in form-->
+        <form action="/login" method="post">
+          <div class="lg-sign-in-htm">
+            <div class="lg-group">
+              <label for="lg-signin-user" class="lg-label">User Id</label>
+              <input id="lg-signin-user" name="user_webid" type="text" class="lg-input" />
+            </div>
+            <div class="lg-group">
+              <label for="lg-signin-pass" class="lg-label">PassWord</label>
+              <input
+                id="lg-signin-pass"
+                name="user_webpw"
+                type="password"
+                class="lg-input"
+                data-type="password"
+              />
+            </div>
+            <div>
+              <input type="submit" onclick="signin()" class="lg-button" value="Sign In" />
+            </div>
+            <div class="lg-hr"></div>
+            <div class="lg-foot-lnk">
+                <a href="signup.html">Create Account</a>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

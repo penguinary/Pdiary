@@ -1,5 +1,4 @@
 const db = require('../config/db')
-const logger = require('../config/logger')
 
 //get_main_dao
 async function signIn(id, pw) {
@@ -9,18 +8,11 @@ async function signIn(id, pw) {
         db.query(queryData, (error, db_data) => {
             console.log(queryData);
             if(error) {
-                logger.error(
-                    'DB error [user]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             if(!db_data.length){
-                logger.error(
-                    'Not DB [user]' +
-                    '\n \t' + "Not DB data"
-                )
+                console.error(error);
                 db_data = "empty"
             }
             resolve(db_data)
@@ -35,11 +27,7 @@ async function signUp(req) {
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [user]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)

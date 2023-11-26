@@ -1,5 +1,4 @@
 const db = require('../config/db')
-const logger = require('../config/logger')
 
 //get_main_dao
 async function getMyDiary(req) {
@@ -11,11 +10,7 @@ async function getMyDiary(req) {
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)
@@ -31,11 +26,7 @@ async function updateData(req) {
         user_birthday='${req.user_birthday}' where user_id = ${req.user_id}`;
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)
@@ -50,11 +41,7 @@ async function getData(req) {
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)
