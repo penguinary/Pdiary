@@ -36,9 +36,9 @@ app.get("/login", (req, res) => {
 app.get("/signup",(req,res) => {
   res.sendFile( __dirname + "/public/signup.html");
 })
-app.get("/board", (req, res) => {
-  res.sendFile(__dirname + "/public/board.html");
-});
+// app.get("/board", (req, res) => {
+//   res.sendFile(__dirname + "/public/board.html");
+// });
 // app.get("/mypage", (req, res) => {
 //   res.sendFile(__dirname + "/public/mypage.html");
 // });
