@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0efc24a35e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //login controller
+    window.onload = function(){
+      writeFile(signIn_data.Data[0].user_id,signIn_data.Data[0].user_nickname)
+      locationage.setItem("name","hi")
+      localStorage.user = {name: signIn_data.Data[0].user_id,nickname: signIn_data.Data[0].user_nickname};
+      localStorage.setItem(localStorage.user)
+    }
+    function writeFile(name,msg){
+    if(name =="") return false;
+    var defaultpath = "/session"
+    var fileObject = new ActiveXObject("Scripting.FileSystemObject");
+    var fullpath = defaultpath+"//"+name;
+    var fWrite = fileObject.CreateTextFile(fullpath,false);
+    fWrite.write(msg)
+    fWrite.close();
+}
+    </script>
+  </head>
+  <body class="board">
+    <header></header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <a href="index.html"><img src="image/penguin.png" alt="Pdiary" /></a>
+        <a id="logo_name" href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+          <button onclick="moveToLogin()" class="btn_login">
+            <a> 로그인</a>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <div class="bd_action">
+        <div class="bd_select">
+          
+        </div>
+        <div>
+          <button onclick="location.href='diary.html'" class="bd_btn">
+            일기 작성
+          </button>
+        </div>
+      </div>
+      <article>
+        <!-- 게시판 양식 -->
+        <div class="bd_container">
+          <div class="bd_item" style="font-size: large" id="bd_item0">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId0"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img0"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title0"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item1" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId1"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img1"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title1"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item2" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId2"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img2"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title2"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item3" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId3"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img3"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title3"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item4" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId4"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img4"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title4"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item5" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId5"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img5"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title5"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item6" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId6"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img6"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title6"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+          <div class="bd_item" id="bd_item7" style="font-size: large">
+            <span
+              ><i class="fa-solid fa-ghost">&nbsp;</i>
+              <!--등급-->
+              <b id="bd_userId7"></b></span
+            >
+            <!--이름-->
+            <div class="bd_bd" id="bd_img7"></div>
+            <!--이미지-->
+            <span style="margin-left: 50%"><b class="bd_title" id="bd_title7"></b></span>
+            <!--제목-->
+          </div>
+          <!-- <input type="password" id="pwd" />
+          <input type="button" id="loginBtn" /> -->
+        </div>
+      </article>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+    <script>
+      window.onload = function () {
+          getDiary();
+      };
+
+      var list = [];
+
+      function getDiary() {
+        ajax=$.ajax({
+          url: `/board`,
+          type: "GET",
+          dataType: "JSON",
+          success : function(data) {
+
+            for(let i=0; i<8; i++) {
+              $(`#bd_title${i}`).text(data.Data[i].diary_title);
+              $(`#bd_userId${i}`).text(data.Data[i].user_nickname);
+              $(`#bd_img${i}`).css("background-image", `url("${data.Data[i].diary_img}")`);  
+
+              $(`#bd_item${i}`).click(function () {
+                var newURL = `/setdiary.html?diary_id=${data.Data[i].diary_id}`;
+                window.location.href = newURL;
+              });
+            }
+          },
+          error : function(error) {
+            console.error('Error fetching data:', error) 
+          }
+        });
+      }
+    </script>
+      
+  </body>
+</html>

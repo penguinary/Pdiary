@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" id="sd-html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setdiary page</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body class="main">
+    <header></header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <a href="index.html"><img src="image/penguin.png" alt="Pdiary" /></a>
+        <a id="logo_name" href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+            <button onclick="moveToLogin()" class="btn_login">
+                <a> 로그인</a>
+        </li>
+      </ul>
+    </nav>
+    <script src="script.js"></script>
+
+    <!-- 메인 부분 -->
+    <main id="sd-main">
+      <!-- 게시판 링크 (뒤로가기) -->
+      <a id="sd-category" href="board.html"></a>
+      <!-- 컨테이너 부분 (테마 배경 부분) -->
+      <section id="sd-mainContainer">
+        <section id="sd-containerTitle">
+          <h2 id="sd-title"></h2>
+          <p id="sd-username"></p>
+        </section>
+        <!-- 일기 내용 부분 -->
+        <section id="sd-userwrite">
+          <div id="sd-today">
+            <!-- 요일 -->
+            <div id="sd-date">
+              <div id="sd-month"></div>
+              <div id="sd-day"></div>
+              <div id="sd-dateToday"></div>
+            </div>
+            <!-- 날씨 -->
+            <div id="sd-weather">
+              <!-- 맑음 -->
+              <svg
+              class="sd-weathersvg"
+              id="sd-sunny"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+              >
+                <path
+                  d="M440-760v-160h80v160h-80Zm266 110-55-55 112-115 56 57-113 113Zm54 210v-80h160v80H760ZM440-40v-160h80v160h-80ZM254-652 140-763l57-56 113 113-56 54Zm508 512L651-255l54-54 114 110-57 59ZM40-440v-80h160v80H40Zm157 300-56-57 112-112 29 27 29 28-114 114Zm283-100q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-160Z"
+                />
+              </svg>
+
+          <!-- 흐림 -->
+              <svg
+               class="sd-weathersvg"
+               id="sd-cloudy"
+               data-weather="cloudy"
+               xmlns="http://www.w3.org/2000/svg"
+               height="24"
+               viewBox="0 -960 960 960"
+               width="24"
+              >
+                <path
+                  d="M440-760v-160h80v160h-80Zm266 110-56-56 113-114 56 57-113 113Zm54 210v-80h160v80H760Zm3 299L650-254l56-56 114 112-57 57ZM254-650 141-763l57-57 112 114-56 56Zm-14 450h180q25 0 42.5-17.5T480-260q0-25-17-42.5T421-320h-51l-20-48q-14-33-44-52.5T240-440q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T40-320q0-83 58.5-141.5T240-520q60 0 109.5 32.5T423-400q58 0 97.5 43T560-254q-2 57-42.5 95.5T420-120H240Zm320-134q-5-20-10-39t-10-39q45-19 72.5-59t27.5-89q0-66-47-113t-113-47q-60 0-105 39t-53 99q-20-5-41-9t-41-9q14-88 82.5-144T480-720q100 0 170 70t70 170q0 77-44 138.5T560-254Zm-79-226Z"
+                />
+              </svg>
+         
+          <!-- 비 -->
+              <svg
+                class="sd-weathersvg"
+                id="sd-rainy"
+                data-weather="rainy"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path
+                 d="M558-84q-15 8-30.5 2.5T504-102l-60-120q-8-15-2.5-30.5T462-276q15-8 30.5-2.5T516-258l60 120q8 15 2.5 30.5T558-84Zm240 0q-15 8-30.5 2.5T744-102l-60-120q-8-15-2.5-30.5T702-276q15-8 30.5-2.5T756-258l60 120q8 15 2.5 30.5T798-84Zm-480 0q-15 8-30.5 2.5T264-102l-60-120q-8-15-2.5-30.5T222-276q15-8 30.5-2.5T276-258l60 120q8 15 2.5 30.5T318-84Zm-18-236q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Zm0-80h400q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-40q0-66-47-113t-113-47q-48 0-87.5 26T333-704l-10 24h-25q-57 2-97.5 42.5T160-540q0 58 41 99t99 41Zm180-200Z"
+                />
+              </svg>
+   
+          <!-- 눈 -->
+              <svg
+                class="sd-weathersvg"
+                id="sd-snowy"
+                data-weather="snowy"
+               xmlns="http://www.w3.org/2000/svg"
+               height="24"
+               viewBox="0 -960 960 960"
+               width="24"
+              >
+                <path
+                 d="M240-200q-17 0-28.5-11.5T200-240q0-17 11.5-28.5T240-280q17 0 28.5 11.5T280-240q0 17-11.5 28.5T240-200Zm480 0q-17 0-28.5-11.5T680-240q0-17 11.5-28.5T720-280q17 0 28.5 11.5T760-240q0 17-11.5 28.5T720-200ZM360-40q-17 0-28.5-11.5T320-80q0-17 11.5-28.5T360-120q17 0 28.5 11.5T400-80q0 17-11.5 28.5T360-40Zm120-160q-17 0-28.5-11.5T440-240q0-17 11.5-28.5T480-280q17 0 28.5 11.5T520-240q0 17-11.5 28.5T480-200ZM600-40q-17 0-28.5-11.5T560-80q0-17 11.5-28.5T600-120q17 0 28.5 11.5T640-80q0 17-11.5 28.5T600-40ZM300-320q-91 0-155.5-64.5T80-540q0-83 55-145t136-73q32-57 87.5-89.5T480-880q90 0 156.5 57.5T717-679q69 6 116 57t47 122q0 75-52.5 127.5T700-320H300Zm0-80h400q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-40q0-66-47-113t-113-47q-48 0-87.5 26T333-704l-10 24h-25q-57 2-97.5 42.5T160-540q0 58 41 99t99 41Zm180-200Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- 그림부분 -->
+          <div id="sd-image" style="background-image: url('');"></div>
+          <!-- 일기부분 -->
+          <textarea id="sd-write"></textarea>
+        </section>
+      </section>
+      <!-- 수정 삭제 -->
+      <!-- <div id="sd-button">
+        <button>수정</button>
+        <button>삭제</button>
+      </div>
+    </main> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+    <script>
+       window.onload = function () {
+        const searchParams= new URLSearchParams(location.search);
+        getDiary(searchParams.get('diary_id'));
+      };
+
+
+      function getDiary(diaryid) {
+        ajax=$.ajax({
+          url: `/setdiary?diary_id=${diaryid}`,
+          type: "GET",
+          dataType: "JSON",
+          success : function(data) {
+
+            $('#sd-title').text(data.Data[0].diary_title);
+            $('#sd-username').text(data.Data[0].user_nickname);
+            $('#sd-month').text(data.Data[0].diary_month);
+            $('#sd-day').text(data.Data[0].diary_day);
+            $('#sd-dateToday').text(data.Data[0].diary_today);
+            $('#sd-write').text(data.Data[0].diary_content);
+            $('#sd-image').css("background-image", `url("${data.Data[0].diary_img}")`);
+            switch(data.Data[0].diary_weather) {
+              case 0:
+                $('#sd-sunny').attr("fill", "#7d7eef");
+                break;
+              case 1:
+                $('#sd-cloudy').attr("fill", "#7d7eef");
+                break;
+              case 2:
+                $('#sd-rainy').attr("fill", "#7d7eef");
+                break;
+              case 3:
+                $('#sd-snowy').attr("fill", "#7d7eef");
+                break;
+            }
+
+            switch(data.Data[0].diary_category) {
+              case 0:
+                $('#sd-category').text("< 뒤로가기");
+                break;
+              case 1:
+                $('#sd-category').text("대학생 게시판 >");
+                break;
+              case 2:
+                $('#sd-category').text("직장인 게시판 >");
+                break;
+            }
+
+            switch(data.Data[0].diary_theme) {
+              case 0:
+                $('#sd-userwrite').css("background-color", "white");
+                break;
+              case 1:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_park.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+              case 2:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_artic.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+              case 3:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_blackBoard.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+              case 4:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_oldStory.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+            }
+            
+          },
+          error : function(error) {
+            console.error('Error fetching data:', error) 
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

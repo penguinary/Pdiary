@@ -4,5 +4,4 @@ package-lock.json
 log/*.json
 log/*.log
 log/
-build/
 sessions/

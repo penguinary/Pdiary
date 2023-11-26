@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>MyPage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // let data = !{data}
+      // // let len = Object.keys(data).length
+      // $(document).ready(function() {
+      //   $('#mp-info-nick').text(data.Data[0].user_nickname)
+      //   $('#mp-info-id').text(data.Data[0].user_webid)
+      //   $('#mp-info-email').text(data.Data[0].user_email)
+      //   $('#mp-info-birth').text(data.Data[0].user_birthday)
+      // })
+      window.onload = function () {
+        getDiary(3);
+      };
+      function getDiary(user_id) {
+        ajax=$.ajax({
+          url: `/mypage?user_id=${user_id}`,
+          type: "GET",
+          dataType: "JSON",
+          success : function(data){
+            $('#mp-info-nick').text(data.Data[0].user_nickname)
+            $('#mp-info-id').text(data.Data[0].user_webid)
+            $('#mp-info-email').text(data.Data[0].user_email)
+            $('#mp-info-birth').text(data.Data[0].user_birthday)
+          },
+          error : function(error){
+            console.error('Error fetching data: ',error);
+          }
+        });
+      }
+    </script>
+  </head>
+  <body class="mypage">
+    <header></header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <a href="index.html"><img src="image/penguin.png" alt="Pdiary" /></a>
+        <a id="logo_name" href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+          <button onclick="moveToLogin()" class="btn_login"><a> 로그인</a></button>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <br />
+      <h2 class="mp-h">회원 정보</h2>
+      <form>
+        <!--충돌을 위한 주석문입니다.-->
+        <table class="mp-info-tb">
+          <tr>
+            <td class="mp-info-td">닉네임 </td>
+            <td id="mp-info-nick">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="mp-info-td">아이디 </td>
+            <td id="mp-info-id">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="mp-info-td">이메일 </td>
+            <td id="mp-info-email">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="mp-info-td">생년월일 </td>
+            <td id="mp-info-birth">&nbsp;</td>
+          </tr>
+        </table>
+      </form>
+    </section>
+  </body>
+</html>
