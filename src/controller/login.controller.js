@@ -7,7 +7,7 @@ async function signIn(req, res) {
     console.log("로그인 컨트롤러", userId, userPw);
     const signIn_data = await loginService.signIn(userId, userPw);
     if(signIn_data.Data == "empty") {
-        return res.redirect("/login");
+        return res.redirect("/login.html");
     }
     if(signIn_data.Status == 200) {
         //로그인 성공 시 쿠키 생성

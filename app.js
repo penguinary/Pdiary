@@ -16,11 +16,16 @@ var mypageRouter = require('./src/routes/mypage.routes');
 var setdiaryRouter = require('./src/routes/setdiary.routes');
 
 app.use(session({
-  name: 'server-session-cookie-id',
+  name: 'user_id',
   secret: 'penguin',
+  secure: false,
   resave: false,
-  saveUninitialized: true,
-  store: new fileStore()
+  secure: false,
+  saveUninitialized: false,
+  store: new fileStore(),
+  cookie: {
+    httpOnly: false
+  }
 }));
 //view engine setup
 app.set('view engine', 'html');
@@ -53,6 +58,7 @@ app.get("/login", (req, res) => {
 // app.get("/mypage", (req, res) => {
 //   res.sendFile(__dirname + "/public/mypage.html");
 // });
+//test
 app.get("/diary", (req, res) => {
   res.sendFile(__dirname + "/diary.html");
 });
