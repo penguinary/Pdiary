@@ -15,7 +15,7 @@ var setdiaryRouter = require('./routes/setdiary.routes');
 //view engine setup
 app.set('view engine', 'pug');
 app.set('views',path.join(__dirname,'views'));
-app.use('/', express.static(path.join(__dirname,'public')));
+app.use('/', express.static(path.join(__dirname,'public'))); //????
 
 if (process.env.ENODE_ENV == "production") {
     app.use(logger("combined"));
@@ -43,7 +43,7 @@ app.get("/board", (req, res) => {
 //   res.sendFile(__dirname + "/public/mypage.html");
 // });
 app.get("/diary", (req, res) => {
-  res.sendFile(__dirname + "/public/diary.html");
+  res.sendFile(__dirname + "/diary.html");
 });
 
 app.use("/", loginRouter);
@@ -64,7 +64,7 @@ app.use(function (err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "development" ? err : {};
   
-    const logger = require("./config/logger");
+    const logger = require("./src/config/logger");
   
     // render the error page
     res.status(err.status || 500);
