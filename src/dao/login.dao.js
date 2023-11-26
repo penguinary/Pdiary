@@ -12,10 +12,7 @@ async function signIn(id, pw) {
                 reject("DB ERR")
             }
             if(!db_data.length){
-                logger.error(
-                    'Not DB [user]' +
-                    '\n \t' + "Not DB data"
-                )
+                console.error(error)
                 db_data = "empty"
             }
             resolve(db_data)
