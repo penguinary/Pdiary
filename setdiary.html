@@ -29,7 +29,7 @@
     <!-- 메인 부분 -->
     <main id="sd-main">
       <!-- 게시판 링크 (뒤로가기) -->
-      <a id="sd-category" href="board.html"></a>
+      <a id="sd-category" href="board.html"> &lt;뒤로가기</a>
       <!-- 컨테이너 부분 (테마 배경 부분) -->
       <section id="sd-mainContainer">
         <section id="sd-containerTitle">
@@ -155,18 +155,6 @@
                 break;
               case 3:
                 $('#sd-snowy').attr("fill", "#7d7eef");
-                break;
-            }
-
-            switch(data.Data[0].diary_category) {
-              case 0:
-                $('#sd-category').text("< 뒤로가기");
-                break;
-              case 1:
-                $('#sd-category').text("대학생 게시판 >");
-                break;
-              case 2:
-                $('#sd-category').text("직장인 게시판 >");
                 break;
             }
 

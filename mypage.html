@@ -17,11 +17,11 @@
       //   $('#mp-info-birth').text(data.Data[0].user_birthday)
       // })
       window.onload = function () {
-        getDiary(3);
+        getDiary();
       };
-      function getDiary(user_id) {
+      function getDiary() {
         ajax=$.ajax({
-          url: `/mypage?user_id=${user_id}`,
+          url: `/mypage`,
           type: "GET",
           dataType: "JSON",
           success : function(data){
