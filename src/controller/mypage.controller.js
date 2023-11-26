@@ -17,10 +17,9 @@ async function updateData(req, res) {
         user_nickname : req.user_nickname,
         user_email : req.user_email,
         user_birthday : req.user_birthday,
-        user_id : 3
     }
     const update_data = await mypageService.updateData(updateReq);
-    return res.redirect("/mypage");
+    return res.redirect("/mypage.html");
 }
 
 module.exports = {

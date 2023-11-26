@@ -17,7 +17,7 @@ async function signIn(req, res) {
         req.session.save(function() {
             console.log("세션 확인", req.session)
         })
-        return res.redirect("/board");
+        return res.redirect("/board.html");
     }
     return signIn_data;
 }
