@@ -77,11 +77,21 @@ body a {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.bd_title {
+  display: inline-block;
+  width: 6rem;
+  white-space: nowrap;     
+  overflow: hidden;       
+  text-overflow: ellipsis;
+}
+
 .bd_select {
   width: 150px;
   height: 35px;
   border-radius: 4px;
-  border: 2px solid #7d7eef;
+  border: 2px solid white;
+  color: white;
   margin-left: 12%;
   margin-top: 3%;
 }
@@ -502,7 +512,7 @@ body a {
   resize: none;
 }
 /* 수정 삭제 버튼 */
-#sd-button {
+/* #sd-button {
   text-align: right;
 }
 #sd-button button {
@@ -520,7 +530,7 @@ body a {
 }
 #sd-button button:hover {
   background-color: var(--color-purple-700);
-}
+} */
 /* 마이페이지 css */
 .mp-h {
   text-decoration-line: none;
@@ -533,7 +543,7 @@ body a {
   border-radius: 20px;
   background-color: #d0d1f7;
   text-align: left;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
   width: 700px;
@@ -766,7 +776,7 @@ body a {
   position: relative;
   overflow: auto;
   width: 100%;
-  height: 760px;
+  height: 880px;
 }
 .ix-slide {
   position: absolute;

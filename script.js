@@ -12,10 +12,10 @@ function moveBoard() {
   location.href = "/setdiary";
 }
 function moveToLogin() {
-  location.href = "/login";
+  location.href = "/login.html";
 }
 function moveToSignup(){
-  location.href="/signup";
+  location.href="/signup.html";
 }
 // function moveToMypage(){
 //   location.href="/mypage"
