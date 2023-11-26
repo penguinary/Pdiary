@@ -138,9 +138,9 @@
 
             $('#sd-title').text(data.Data[0].diary_title);
             $('#sd-username').text(data.Data[0].user_nickname);
-            $('#sd-month').text(data.Data[0].diary_month);
-            $('#sd-day').text(data.Data[0].diary_day);
-            $('#sd-dateToday').text(data.Data[0].diary_today);
+            $('#sd-month').text(data.Data[0].diary_month+"월");
+            $('#sd-day').text(data.Data[0].diary_day+"일");
+            $('#sd-dateToday').text(data.Data[0].diary_today+"요일");
             $('#sd-write').text(data.Data[0].diary_content);
             $('#sd-image').css("background-image", `url("${data.Data[0].diary_img}")`);
             switch(data.Data[0].diary_weather) {
