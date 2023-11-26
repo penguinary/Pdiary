@@ -1,5 +1,5 @@
 const db = require('../config/db')
-const logger = require('../config/logger')
+// const logger = require('../config/logger')
 
 async function getDiary(req) {
     console.log(req.diary_id);
@@ -11,11 +11,7 @@ async function getDiary(req) {
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)

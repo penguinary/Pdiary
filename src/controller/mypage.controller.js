@@ -19,7 +19,7 @@ async function updateData(req, res) {
         user_id : 3
     }
     const update_data = await mypageService.updateData(updateReq);
-    return res.redirect("/mypage");
+    return res.redirect("/mypage.html");
 }
 
 module.exports = {

@@ -1,5 +1,5 @@
 const db = require('../config/db')
-const logger = require('../config/logger')
+// const logger = require('../config/logger')
 
 //get_main_dao
 
@@ -12,11 +12,7 @@ async function postDiary(req) {
         console.log(queryData),
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)
@@ -34,11 +30,7 @@ async function putDiary(req) {
         console.log(queryData);
         db.query(queryData, (error, db_data) => {
             if(error) {
-                logger.error(
-                    'DB error [diary]' +
-                    '\n \t' + queryData +
-                    '\n \t' + error
-                )
+                console.error(error);
                 reject("DB ERR")
             }
             resolve(db_data)

@@ -2,26 +2,26 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+// var logger = require("morgan");
 
 //router path
 var app = express();
-var loginRouter = require('./routes/login.routes');
-var diaryRouter = require('./routes/diary.routes');
-var boardRouter = require('./routes/board.routes');
-var mypageRouter = require('./routes/mypage.routes');
-var setdiaryRouter = require('./routes/setdiary.routes');
+var loginRouter = require('./src/routes/login.routes');
+var diaryRouter = require('./src/routes/diary.routes');
+var boardRouter = require('./src/routes/board.routes');
+var mypageRouter = require('./src/routes/mypage.routes');
+var setdiaryRouter = require('./src/routes/setdiary.routes');
 
 //view engine setup
 app.set('view engine', 'pug');
 app.set('views',path.join(__dirname,'views'));
 app.use('/', express.static(path.join(__dirname,'public'))); //????
 
-if (process.env.ENODE_ENV == "production") {
-    app.use(logger("combined"));
-  } else {
-    app.use(logger("dev"));
-}
+// if (process.env.ENODE_ENV == "production") {
+//     app.use(logger("combined"));
+//   } else {
+//     app.use(logger("dev"));
+// }
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -59,18 +59,18 @@ app.use(function (req, res, next) {
   });
 
 // error handler
-app.use(function (err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get("env") === "development" ? err : {};
+// app.use(function (err, req, res, next) {
+//     // set locals, only providing error in development
+//     res.locals.message = err.message;
+//     res.locals.error = req.app.get("env") === "development" ? err : {};
   
-    const logger = require("./src/config/logger");
+//     const logger = require("./config/logger");
   
-    // render the error page
-    res.status(err.status || 500);
-    logger.error("Server error" + "\n \t" + res.locals.error);
-    res.send({ Message: "예외적이거나 예측하지 못한 에러 발생", Status: 500 });
-  });
+//     // render the error page
+//     res.status(err.status || 500);
+//     logger.error("Server error" + "\n \t" + res.locals.error);
+//     res.send({ Message: "예외적이거나 예측하지 못한 에러 발생", Status: 500 });
+//   });
 
 app.listen(5500,()=>{  //포트설정
     console.log('5500번 포트에서 서버 대기중입니다!');
