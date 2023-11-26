@@ -334,9 +334,7 @@
         param.diary_time = diaryTime.toISOString().slice(0, 19).replace('T', ' ');
         param.user_id = 1;
         param.diary_title=$("#da-title").val();
-        param.diary_category=$("#da-boardType").val();
         param.diary_theme=$("#da-Theme").val();
-        param.diary_private = $("#da-Private").is(":checked") ? 1 : 0;
         param.diary_month=$("#da-dateMonth").val();
         param.diary_day=$("#da-dateDay").val();
         param.diary_today=$("#da-dateToday").val();
