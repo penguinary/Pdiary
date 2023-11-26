@@ -1,8 +1,8 @@
 var express = require("express");
 const router = express.Router();
-const loginController = require("../controller/login.controller");
+const boardController = require("../controller/board.controller");
 
-router.get("/", loginController.signIn);
+router.get("/", boardController.getBoard);
 
 
 module.exports = router;
