@@ -29,21 +29,21 @@
     <!-- 메인 부분 -->
     <main id="sd-main">
       <!-- 게시판 링크 (뒤로가기) -->
-      <a href="board.html">전체 게시판 ></a>
+      <a id="sd-category" href="board.html"></a>
       <!-- 컨테이너 부분 (테마 배경 부분) -->
       <section id="sd-mainContainer">
         <section id="sd-containerTitle">
           <h2 id="sd-title"></h2>
-          <p id="sd-username">황제펭귄</p>
+          <p id="sd-username"></p>
         </section>
         <!-- 일기 내용 부분 -->
         <section id="sd-userwrite">
           <div id="sd-today">
             <!-- 요일 -->
             <div id="sd-date">
-              <div id="sd-month">11월</div>
-              <div id="sd-day">21일</div>
-              <div id="sd-dateToday">수요일</div>
+              <div id="sd-month"></div>
+              <div id="sd-day"></div>
+              <div id="sd-dateToday"></div>
             </div>
             <!-- 날씨 -->
             <div id="sd-weather">
@@ -108,35 +108,94 @@
             </div>
           </div>
           <!-- 그림부분 -->
-          <div id="sd-image"></div>
+          <div id="sd-image" style="background-image: url('');"></div>
           <!-- 일기부분 -->
-          <textarea name="" id="sd-write"></textarea>
+          <textarea id="sd-write"></textarea>
         </section>
       </section>
       <!-- 수정 삭제 -->
-      <div id="sd-button">
+      <!-- <div id="sd-button">
         <button>수정</button>
         <button>삭제</button>
       </div>
-    </main>
+    </main> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   
     <script>
-      window.onload = function () {
-        getDiary(17);
+       window.onload = function () {
+        const searchParams= new URLSearchParams(location.search);
+        getDiary(searchParams.get('diary_id'));
       };
+
 
       function getDiary(diaryid) {
         ajax=$.ajax({
-          url: "/setdiary",
-          data: {diary_id : 17},
+          url: `/setdiary?diary_id=${diaryid}`,
           type: "GET",
           dataType: "JSON",
-          success: function(result) {
-            console.log(result);
-          }
+          success : function(data) {
 
+            $('#sd-title').text(data.Data[0].diary_title);
+            $('#sd-username').text(data.Data[0].user_nickname);
+            $('#sd-month').text(data.Data[0].diary_month);
+            $('#sd-day').text(data.Data[0].diary_day);
+            $('#sd-dateToday').text(data.Data[0].diary_today);
+            $('#sd-write').text(data.Data[0].diary_content);
+            $('#sd-image').css("background-image", `url("${data.Data[0].diary_img}")`);
+            switch(data.Data[0].diary_weather) {
+              case 0:
+                $('#sd-sunny').attr("fill", "#7d7eef");
+                break;
+              case 1:
+                $('#sd-cloudy').attr("fill", "#7d7eef");
+                break;
+              case 2:
+                $('#sd-rainy').attr("fill", "#7d7eef");
+                break;
+              case 3:
+                $('#sd-snowy').attr("fill", "#7d7eef");
+                break;
+            }
+
+            switch(data.Data[0].diary_category) {
+              case 0:
+                $('#sd-category').text("< 뒤로가기");
+                break;
+              case 1:
+                $('#sd-category').text("대학생 게시판 >");
+                break;
+              case 2:
+                $('#sd-category').text("직장인 게시판 >");
+                break;
+            }
+
+            switch(data.Data[0].diary_theme) {
+              case 0:
+                $('#sd-userwrite').css("background-color", "white");
+                break;
+              case 1:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_park.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+              case 2:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_artic.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+              case 3:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_blackBoard.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+              case 4:
+                $('#sd-mainContainer').css("background-image", "url(./image/da_oldStory.png)");
+                $('#sd-userwrite').css("border", "none");
+                break;
+            }
+            
+          },
+          error : function(error) {
+            console.error('Error fetching data:', error) 
+          }
         });
       }
     </script>

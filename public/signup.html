@@ -15,20 +15,10 @@
         param.user_email=$("lg-signup-email").val()
         param.user_birthday=$("lg-signup-birth").val()
         var ajax=$.ajax({
-          url: "/login",
+          url: "/signup",
           data: param,
           type: "POST",
           dataType: "JSON"
-        });
-      }
-      function signin() {
-        var param={};
-        param.user_webid=$("lg-signin-user").val()
-        param.user_webpw=$("lg-signin-pass").val()
-        var ajax = $.ajax({
-          url: "/login",
-          data: param,
-          type: "POST"
         });
       }
     </script>
@@ -44,40 +34,18 @@
           type="radio"
           name="lg-tab"
           class="lg-sign-in"
-          checked
+          disabled
         /><label for="lg-tab-1" class="lg-tab">Sign In</label>
         <input
           id="lg-tab-2"
           type="radio"
           name="lg-tab"
           class="lg-sign-up"
+          checked
         /><label for="lg-tab-2" class="lg-tab">Sign Up</label>
         <div class="lg-form">
-        <!--sign in form-->
-        <form action="/login" method="post">
-          <div class="lg-sign-in-htm">
-            <div class="lg-group">
-              <label for="lg-signin-user" class="lg-label">User Id</label>
-              <input id="lg-signin-user" name="user_webid" type="text" class="lg-input" />
-            </div>
-            <div class="lg-group">
-              <label for="lg-signin-pass" class="lg-label">PassWord</label>
-              <input
-                id="lg-signin-pass"
-                name="user_webpw"
-                type="password"
-                class="lg-input"
-                data-type="password"
-              />
-            </div>
-            <div>
-              <input type="submit" onclick="signin()" class="lg-button" value="Sign In" />
-            </div>
-            <div class="lg-hr"></div>
-          </div>
-        </form>
         <!--sign up form-->
-          <form action="/login" method="post">
+          <form action="/signup" method="post">
             <div class="lg-sign-up-htm">
               <div class="lg-group">
                 <label for="lg-signup-user" class="lg-label">User ID</label>
@@ -112,9 +80,6 @@
                 <input type="submit" onclick="signup()" class="lg-button" value="Sign Up">
               </div>
               <div class="lg-hr"></div>
-              <div class="lg-foot-lnk">
-                <label for="lg-tab-1"><a>Already Member?</a></label>
-              </div>
             </div>
           </form>
         </div>

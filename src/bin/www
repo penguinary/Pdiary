@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('toy-backend:server');
+var debug = require('debug')('penguin:server');
 var http = require('http');
 
 /**

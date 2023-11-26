@@ -50,12 +50,6 @@
 
           <!-- 게시판 선택, 테마 선택, 비공개 선택 -->
           <div id="da-containerSelect">
-            <select name="boardType" id="da-boardType">
-              <option value="0">전체 게시판</option>
-              <option value="1">대학생 게시판</option>
-              <option value="2">직장인 게시판</option>
-            </select>
-
             <select name="diaryTheme" id="da-Theme">
               <option value="0">기본 테마</option>
               <option value="1">놀이공원</option>
@@ -63,11 +57,6 @@
               <option value="3">칠판</option>
               <option value="4">흥부와 놀부</option>
             </select>
-
-            <span>
-              <input type="checkbox" name="private" id="da-Private" value="1" />
-              <label for="ad-diaryPrivate">비공개</label>
-            </span>
           </div>
 
           <!-- 날짜, 날씨 입력 -->
@@ -337,7 +326,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
       function postdiary() {
+        const canvas = document.getElementById('da-canvas');
+        const dataURL = canvas.toDataURL();
+        var diaryTime = new Date();
+        
         var param={};
+        param.diary_time = diaryTime.toISOString().slice(0, 19).replace('T', ' ');
         param.user_id = 1;
         param.diary_title=$("#da-title").val();
         param.diary_category=$("#da-boardType").val();
@@ -348,6 +342,7 @@
         param.diary_today=$("#da-dateToday").val();
         param.diary_weather=$("input[name='weather']:checked").val();
         param.diary_content=$("#da-write").val();
+        param.diary_img=dataURL;
 
         var ajax=$.ajax({
           url: "/diary",

@@ -9,11 +9,17 @@ class Board {
 }
 //일기 작성 버튼
 function moveBoard() {
-  location.href = "/setdiary.html";
+  location.href = "/setdiary";
 }
 function moveToLogin() {
-  location.href = "login.html";
+  location.href = "/login.html";
 }
+function moveToSignup(){
+  location.href="/signup.html";
+}
+// function moveToMypage(){
+//   location.href="/mypage"
+// }
 //셀렉트 변경 알림(test)
 function changeSelect() {
   var value_category = document.getElementById("bd_category");

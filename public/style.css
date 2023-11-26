@@ -70,15 +70,28 @@ body a {
 .bd_item {
   cursor: pointer;
 }
-.bd_item img {
+.bd_item div {
   width: 250px;
   height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+.bd_title {
+  display: inline-block;
+  width: 6rem;
+  white-space: nowrap;     
+  overflow: hidden;       
+  text-overflow: ellipsis;
+}
+
 .bd_select {
   width: 150px;
   height: 35px;
   border-radius: 4px;
-  border: 2px solid #7d7eef;
+  border: 2px solid white;
+  color: white;
   margin-left: 12%;
   margin-top: 3%;
 }
@@ -165,7 +178,6 @@ body a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 0 2rem;
 }
 
@@ -372,6 +384,7 @@ body a {
   --color-background: var(--color-purple-100);
   --color-background-none: none;
 }
+
 /* 메인 */
 #sd-main {
   width: 45rem;
@@ -428,7 +441,7 @@ body a {
   height: 38.75rem;
   border-radius: 4px;
   padding: 0 1rem 1rem 1rem;
-  background-color: white;
+  background-color: transparent;
   border: 1px solid black;
 }
 
@@ -499,7 +512,7 @@ body a {
   resize: none;
 }
 /* 수정 삭제 버튼 */
-#sd-button {
+/* #sd-button {
   text-align: right;
 }
 #sd-button button {
@@ -517,7 +530,7 @@ body a {
 }
 #sd-button button:hover {
   background-color: var(--color-purple-700);
-}
+} */
 /* 마이페이지 css */
 .mp-h {
   text-decoration-line: none;
@@ -530,7 +543,7 @@ body a {
   border-radius: 20px;
   background-color: #d0d1f7;
   text-align: left;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
   width: 700px;
@@ -561,7 +574,7 @@ body a {
   width: 230px;
 }
 
-/* 회원정보 수정 css
+회원정보 수정 css
 
  ****제거대상****
 
@@ -608,7 +621,7 @@ body a {
 .mp-info-edit-button:active {
   box-shadow: -2px -2px 12px 0px #0002, 2px 2px 12px 0px #0002,
     -2px -2px 12px 0px #fff9, 2px 2px 12px 0px #fff9;
-} */
+}
 
 /* 로그인 css */
 .clearfix:after,
@@ -763,7 +776,7 @@ body a {
   position: relative;
   overflow: auto;
   width: 100%;
-  height: 760px;
+  height: 880px;
 }
 .ix-slide {
   position: absolute;
