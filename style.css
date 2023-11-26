@@ -1,0 +1,809 @@
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+body {
+  font-family: "Poor Story", cursive;
+}
+body {
+  margin: 0px;
+}
+body a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #a2a2ff;
+  padding: 8px 12px;
+}
+.logo {
+  display: grid;
+  grid-template-columns: repeat(2, 80px);
+  margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+#logo_name {
+  font-size: 40px;
+  letter-spacing: 7px;
+  font-weight: bold;
+  margin-top: 13%;
+}
+.nav_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0px;
+}
+.nav_menu li {
+  padding: 8px 12px;
+}
+.nav_menu :hover {
+  border-radius: 4px;
+  background: #a0a1f2;
+}
+.btn_login {
+  width: 100%;
+  height: 25px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #a9aae2;
+  cursor: pointer;
+  border: none;
+}
+.btn_login > a {
+  font-family: "Poor Story";
+}
+.bd_container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  /* grid-template-rows: repeat(3, 200px); */
+  gap: 50px 100px;
+  margin-left: 10%;
+  margin-top: 1%;
+}
+.bd_item {
+  cursor: pointer;
+}
+.bd_item div {
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bd_select {
+  width: 150px;
+  height: 35px;
+  border-radius: 4px;
+  border: 2px solid #7d7eef;
+  margin-left: 12%;
+  margin-top: 3%;
+}
+#bd_category {
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  font-family: "Poor Story", cursive;
+}
+
+.bd_action {
+  display: grid;
+  grid-template-columns: repeat(2, 83%);
+}
+
+.bd_action div {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+.bd_btn {
+  margin-top: 60%;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  background: #7d7eef;
+  border: none;
+  font-family: "Poor Story", cursive;
+  z-index: 1;
+  cursor: pointer;
+}
+.bd_btn:before {
+  height: 0%;
+  width: 2px;
+}
+.bd_btn:hover {
+  color: #fff;
+}
+.bd_btn:hover:after {
+  left: 0;
+  width: 100%;
+}
+.bd_btn:active {
+  top: 2px;
+}
+.bd_btn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #dad0ff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+#da-html {
+  --color-grey-100: rgb(201, 201, 201);
+  --color-grey-400: rgb(140, 140, 140);
+  --color-grey-700: rgb(76, 76, 76);
+
+  --color-purple-100: #d1d1f4;
+  --color-purple-400: #7d7eef;
+  --color-purple-700: #3c3d99;
+
+  --color-background: var(--color-purple-100);
+  --color-background-none: none;
+}
+
+#da-main {
+  width: 45rem;
+  margin: 5rem auto;
+}
+
+/* 메인 위쪽 부분 */
+#da-mainHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+#da-mainHead h1 {
+  margin: 0.5rem 0;
+  color: var(--color-grey-700);
+  font-size: 2.3rem;
+}
+
+#da-mainHead button {
+  font: inherit;
+  background-color: var(--color-purple-400);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#da-mainHead button:hover {
+  background-color: var(--color-purple-700);
+}
+
+/* 메인 아래쪽 부분 */
+#da-mainContainer {
+  border: 2px solid var(--color-grey-700);
+  padding: 2rem 2rem 4rem 2rem;
+  border-radius: 10px;
+  background-color: var(--color-background);
+  background-size: cover;
+}
+
+/* 제목 */
+#da-title {
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.3rem;
+  padding: 0 0.5rem;
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 4px;
+  color: var(--color-grey-700);
+}
+
+#da-title::placeholder {
+  color: var(--color-grey-400);
+}
+
+/* 게시판, 테마, 비공개 선택 */
+#da-containerSelect {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  color: var(--color-grey-700);
+  font-weight: bold;
+}
+
+#da-containerSelect select {
+  height: 1.5rem;
+  font: inherit;
+  font-size: larger;
+  color: var(--color-grey-700);
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+#da-containerSelect span {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid var(--color-grey-700);
+  padding-right: 0.2rem;
+}
+
+#da-Private {
+  width: 1rem;
+  height: 1rem;
+  font-size: larger;
+}
+
+/* 일기 테마 내부 부분 (추후 크기 지정)*/
+#da-userWrite {
+  margin-top: 1rem;
+  border-radius: 4px;
+  padding: 0 1rem 1rem 1rem;
+  background-color: white;
+  border: 1px solid black;
+}
+/* 날짜, 날씨 입력 */
+#da-today {
+  display: flex;
+  align-items: center;
+}
+.da-date {
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  font: inherit;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  background-color: var(--color-background-none);
+}
+#da-dateToday {
+  width: 6rem;
+}
+
+#da-weather {
+  width: 21rem;
+  text-align: right;
+}
+#da-weather input {
+  display: none;
+}
+#da-weather input:checked + label svg {
+  fill: #7d7eef;
+}
+.da-weathersvg {
+  width: 3.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+/* 캔버스 */
+#da-canvas {
+  width: 100%;
+  height: 19rem;
+  border-top: 1px solid var(--color-grey-700);
+}
+
+#da-drawingTool {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#da-choiceColor {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.da-controlColor {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 펜 두께 선택 */
+#da-controlRange {
+  width: 8rem;
+}
+
+/* 펜 종류 선택 */
+#da-choicePen input {
+  display: none;
+}
+
+#da-choicePen input:checked + label svg {
+  fill: #7d7eef;
+}
+
+.da-pensvg {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+/* 삭제 버튼 */
+#da-drawDelete svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+}
+
+/* 일기 부분 */
+#da-write {
+  width: 100%;
+  background-color: var(--color-background-none);
+
+  border: none;
+  border-top: 1px solid var(--color-grey-700);
+
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  resize: none;
+}
+#sd-html {
+  --color-grey-100: rgb(201, 201, 201);
+  --color-grey-400: rgb(140, 140, 140);
+  --color-grey-700: rgb(76, 76, 76);
+
+  --color-purple-100: #d1d1f4;
+  --color-purple-400: #7d7eef;
+  --color-purple-700: #3c3d99;
+
+  --color-background: var(--color-purple-100);
+  --color-background-none: none;
+}
+
+/* 메인 */
+#sd-main {
+  width: 45rem;
+  margin: 5rem auto;
+}
+/* 게시판 링크 */
+#sd-main a {
+  width: 1.5rem;
+  color: var(--color-grey-400);
+  font-weight: bold;
+}
+/* 테마 적용 부분 */
+#sd-mainContainer {
+  border: 2px solid var(--color-grey-700);
+  margin: 0.5rem 0;
+  padding: 2rem 2rem 4rem 2rem;
+  border-radius: 10px;
+  background-color: var(--color-purple-100);
+  background-size: cover;
+}
+/* 제목 작성자 */
+#sd-containerTitle {
+  width: 100%;
+  height: 4.5rem;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  font: inherit;
+  color: var(--color-grey-700);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#sd-title {
+  margin: 0;
+
+  font-size: 2rem;
+}
+
+#sd-username {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/* 그림일기 내부 부분 */
+#sd-userwrite {
+  margin-top: 1rem;
+  height: 38.75rem;
+  border-radius: 4px;
+  padding: 0 1rem 1rem 1rem;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+/* 요일, 날씨 상단 */
+#sd-today {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#sd-date {
+  display: flex;
+}
+
+#sd-date * {
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  font: inherit;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  background-color: transparent;
+  line-height: 5rem;
+}
+
+#sd-dateToday {
+  width: 6rem;
+}
+
+#sd-date p {
+  margin: 0;
+}
+
+/* 날씨 (이미지) */
+#sd-weather {
+  text-align: right;
+  padding: 1.25rem 2rem 1.25rem 0;
+  /* background-image: url(./image/sd-weatherSunny.png);
+  background-size: cover; */
+}
+
+.sd-weathersvg {
+  width: 3.5rem;
+  height: 2.5rem;
+}
+
+/* 그림 (이미지) */
+#sd-image {
+  width: 100%;
+  height: 19rem;
+  border-top: 1px solid var(--color-grey-700);
+}
+
+/* 일기부분 */
+#sd-write {
+  width: 100%;
+  height: 11rem;
+  background-color: var(--color-background-none);
+
+  border: none;
+  border-top: 1px solid var(--color-grey-700);
+
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  resize: none;
+}
+/* 수정 삭제 버튼 */
+#sd-button {
+  text-align: right;
+}
+#sd-button button {
+  font: inherit;
+  background-color: var(--color-purple-400);
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-right: 0.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+  vertical-align: middle;
+}
+#sd-button button:hover {
+  background-color: var(--color-purple-700);
+}
+/* 마이페이지 css */
+.mp-h {
+  text-decoration-line: none;
+  text-align: center;
+  font-size: 55px;
+  color: black;
+}
+.mp-info-tb {
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: #d0d1f7;
+  text-align: left;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 350px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.mp-info-td {
+  text-align: center;
+  width: 350px;
+}
+.mp-dr-tb {
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: #a0a1f2;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  width: 770px;
+  height: 177px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mp-dr-td {
+  text-align: center;
+  width: 230px;
+}
+
+회원정보 수정 css
+
+ ****제거대상****
+
+.mp-info-edit-tb {
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 555px;
+  height: 350px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.mp-info-edit-td {
+  text-align: right;
+  width: 100px;
+  height: 35px;
+}
+.mp-infoEdText {
+  width: 333px;
+  height: 20px;
+  size: 30;
+  border-radius: 5px;
+  background-color: #cacaf5;
+}
+.mp-infoEdText:focus {
+  background-color: #e8e8f4;
+}
+.mp-edit {
+  padding-right: 10px;
+}
+.mp-info-edit-button {
+  background: #6e70f2;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  font-size: 15px;
+  color: white;
+  font-family: "Poor Story";
+}
+.mp-info-edit-button:active {
+  box-shadow: -2px -2px 12px 0px #0002, 2px 2px 12px 0px #0002,
+    -2px -2px 12px 0px #fff9, 2px 2px 12px 0px #fff9;
+}
+
+/* 로그인 css */
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+}
+
+.lg-wrap {
+  width: 100%;
+  margin: auto;
+  margin-top: 55px;
+  max-width: 525px;
+  min-height: 730px;
+  position: relative;
+  background-color: #a0a1f2;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.lg-html {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 55px 70px 50px 70px;
+  box-sizing: border-box;
+}
+.lg-html .lg-sign-in-htm,
+.lg-html .lg-sign-up-htm {
+  top: 22px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+}
+.lg-html .lg-sign-in-htm {
+  top: 100px;
+}
+
+.lg-html .lg-sign-in,
+.lg-html .lg-sign-up,
+.lg-form .lg-group .lg-check {
+  display: none;
+}
+
+.lg-html .lg-tab {
+  font-size: 30px;
+  margin-right: 15px;
+  padding-bottom: 5px;
+  margin: 0 15px 10px 0;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.lg-html .lg-sign-in:checked + .lg-tab,
+.lg-html .lg-sign-up:checked + .lg-tab {
+  color: #fff;
+  border-color: #1161ee;
+}
+.lg-form {
+  min-height: 345px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.lg-form .lg-group {
+  margin-bottom: 15px;
+}
+.lg-form .lg-group .lg-label,
+.lg-form .lg-group .lg-input,
+.lg-form .lg-group .lg-button {
+  width: 100%;
+  font-size: 17px;
+  color: black;
+  display: block;
+  box-sizing: border-box;
+}
+.lg-form .lg-group .lg-input,
+.lg-form .lg-group .lg-button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.lg-form .lg-group lg-input[data-type="password"] {
+  text-rendering: circle;
+  -webkit-text-security: circle;
+}
+.lg-form .lg-group .lg-label {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+.lg-form .lg-group .lg-button {
+  background: #6e70f2;
+}
+.lg-button {
+  background: #6e70f2;
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 17px;
+  color: white;
+  font-family: "Poor Story";
+}
+.lg-button:active {
+  box-shadow: -2px -2px 12px 0px #0002, 2px 2px 12px 0px #0002,
+    -2px -2px 12px 0px #fff9, 2px 2px 12px 0px #fff9;
+}
+
+.lg-group .lg-in-line .lg-input {
+  display: inline;
+  border-radius: 25px 0px 0px 25px;
+  width: 80%;
+}
+.lg-group .lg-in-line  {
+  display: inline;
+  width: 20%;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-left: -5px;
+}
+
+.lg-html
+  .lg-sign-in:checked
+  + .lg-tab
+  + .lg-sign-up
+  + .lg-tab
+  + .lg-form
+  .lg-sign-in-htm {
+  transform: rotate(0);
+}
+.lg-html .lg-sign-up:checked + .lg-tab + .lg-form .lg-sign-up-htm {
+  transform: rotate(0);
+}
+.lg-hr {
+  height: 2px;
+  margin: 30px 0 20px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.lg-foot-lnk {
+  text-align: center;
+}
+.ix-slider {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  height: 760px;
+}
+.ix-slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: ix-slider 9s infinite linear;
+}
+.ix-slide:nth-child(1) {
+  background-image: url("image/diary1.png");
+  animation-delay: 0;
+}
+.ix-slide:nth-child(2) {
+  background-image: url("image/diary2.png");
+  animation-delay: -3s;
+}
+.ix-slide:nth-child(3) {
+  background-image: url("image/diary3.png");
+  animation-delay: -6s;
+}
+@keyframes ix-slider {
+  0% {
+    transform: translateX(0);
+  }
+  26% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100%);
+    animation-timing-function: step-end;
+  }
+  93% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

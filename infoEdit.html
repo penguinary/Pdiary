@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyPage</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      function updateData(){
+       var param={};
+       param.user_webpw=$("mp-pw").val()
+       param.user_nickname=$("mp-userNn").val()
+       param.user_email=$("mp-email").val()
+       param.user_birthday=$("mp-userBd").val()
+       var ajax=$.ajax({
+        url: "/mypage",
+        data: param,
+        type: "POST",
+        dataType: "JSON"
+       });
+      }
+    </script>
+  </head>
+  <body class="main">
+    <header></header>
+    <nav class="nav_bar">
+      <div class="logo">
+        <a href="index.html"><img src="image/penguin.png" alt="Pdiary" /></a>
+        <a id="logo_name" href="index.html">Pdiary</a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="board.html">일기장</a></li>
+        <li><a href="mypage.html">마이페이지</a></li>
+        <li>
+          <button onclick="moveToLogin()" class="btn_login"><a> 로그인</a>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <br />
+    <section style="padding-top: 10%">
+      <h2 style="text-align: center; font-size: 35px">회원정보 수정</h2>
+      <form action="/mypage" method="post">
+        <table class="mp-info-edit-tb">
+          <tr>
+            <td class="mp-info-edit-td">비밀번호</td>
+            <td>
+              &nbsp;
+              <input
+                type="password"
+                class="mp-infoEdText"
+                id="mp-pw"
+                name="user_webpw"
+              />
+            </td>
+            <td class="mp-edit">
+            </td>
+          </tr>
+          <tr>
+            <td class="mp-info-edit-td">닉네임</td>
+            <!--충돌을 위한 주석문입니다.-->
+            <td>
+              &nbsp;
+              <input
+                type="text"
+                class="mp-infoEdText"
+                id="mp-userNn"
+                name="user_nickname"
+              />
+            </td>
+            <td class="mp-edit">
+            </td>
+          </tr>
+          <tr>
+            <td class="mp-info-edit-td">이메일</td>
+            <td>
+              &nbsp; <input type="email" class="mp-infoEdText" id="mp-email"
+              name="user_email"/>
+            </td>
+            <td class="mp-edit">
+            </td>
+          </tr>
+          <tr>
+            <td class="mp-info-edit-td">생년월일</td>
+            <td>
+              &nbsp;
+              <input
+                type="date"
+                class="mp-infoEdText"
+                id="mp-userBd"
+                name="user_birthday"
+              />
+            </td>
+            <td class="mp-edit">
+              <input type="submit" onclick="updateData()" class="mp-info-edit-button" value="수정" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </section>
+  </body>
+</html>
